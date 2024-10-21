@@ -1,0 +1,18 @@
+@API_HostAddress = http://localhost:5132
+
+### Get Suppliers
+Get {{API_HostAddress}}/api/suppliers HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+### POST Supplier
+POST {{API_HostAddress}}/api/suppliers HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "SupplierName": "Supplier C",
+    "ContactName": "Mark",
+    "Email": "mark@supplier.com",
+    "Phone": "099-766-4444"
+}
