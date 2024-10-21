@@ -64,4 +64,20 @@ public class SuppliersController : ControllerBase
         return CreatedAtAction(nameof(GetSupplier), new { id = supplier.ID_Supplier }, supplier);
     }
 
+    // DELETE: api/orders/{id}
+    [HttpDelete("{id}", Name = "DeleteSupplier")]
+    public async Task<IActionResult> DeleteSupplier(Guid id)
+    {
+        var supplier = await _context.Suppliers.FindAsync(id);
+        if (supplier == null)
+        {
+            return NotFound(); // Return 404 if the order is not found
+        }
+
+        _context.Suppliers.Remove(supplier); // Remove the order from the context
+        await _context.SaveChangesAsync(); // Save changes to the database
+
+        return NoContent(); // Return 204 No Content
+    }
+
 }

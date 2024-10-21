@@ -16,3 +16,6 @@ Content-Type: application/json
     "Email": "mark@supplier.com",
     "Phone": "099-766-4444"
 }
+
+### Delete an Supplier
+DELETE {{API_HostAddress}}/api/suppliers/01fca1c4-08fd-4005-b368-2ac70d061501 HTTP/1.1

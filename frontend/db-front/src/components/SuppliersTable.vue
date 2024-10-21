@@ -18,13 +18,13 @@
         <tr class="table" v-for="el in allSuppliers" :key="el.id">
           <td>{{ el.supplierName }}</td>
           <td>{{ el.contactName }}</td>
-          <td>{{ el.email}}</td>
-          <td>{{ el.phone}}</td>
+          <td>{{ el.email }}</td>
+          <td>{{ el.phone }}</td>
           <td>
-            <button @click="changeSupplier(el)">Изменить</button>
+            <button @click="changeSupp(el)">Изменить</button>
           </td>
           <td>
-            <button @click="deleteSupplier(el)">Удалить</button>
+            <button @click="deleteSupp(el)">Удалить</button>
           </td>
         </tr>
       </tbody>
@@ -38,14 +38,15 @@ import { mapGetters, mapActions } from 'vuex';
 export default {
     name: 'Suppliers',
     methods: {
-      ...mapActions('suppliers', ['fetchSuppliers']),
-      changeSupplier(el)
+      ...mapActions('suppliers', ['fetchSuppliers', 'deleteSupplier']),
+      changeSupp(el)
       {
         console.log(el.iD_Supplier);
+        
       },
-      deleteSupplier(el)
+      deleteSupp(el)
       {
-        console.log(el.iD_Supplier);
+        this.deleteSupplier(el);
       }
     },
     computed: {

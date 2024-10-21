@@ -23,11 +23,11 @@
                     </td>
                     <td>                
                         <input :class="[{'red-border': titleRBorderThree}]"
-                        v-model="newSupllier.Email" placeholder="Введите контактное имя" />
+                        v-model="newSupllier.Email" placeholder="Введите email" />
                     </td>
                     <td>                
                         <input :class="[{'red-border': titleRBorderFour}]"
-                        v-model="newSupllier.Phone" placeholder="Введите контактное имя" />
+                        v-model="newSupllier.Phone" placeholder="Введите телефон" />
                     </td>
                     </tr>
                 </tbody>
@@ -52,8 +52,7 @@ export default {
         return {
             newSupllier: {SupplierName: "", ContactName: "", Email: "", Phone: ""}
             }
-        }
-    ,
+    },
     methods: {
         ...mapActions('suppliers', ['newSuppliers']),
         addSupplier()
@@ -61,8 +60,13 @@ export default {
             if(this.newSupllier.SupplierName != '' && this.newSupllier.ContactName != '' && this.newSupllier.Email != '' && this.newSupllier.Phone != '')
             {
                 this.newSuppliers(this.newSupllier);
+                this.newSupllier.SupplierName = '';
+                this.newSupllier.ContactName = '';
+                this.newSupllier.Email = '';
+                this.newSupllier.Phone = ''
             } else {
-                console.log("Не все данные введены");            }
+                console.log("Не все данные введены");
+            }
         }
     },
     computed: {
