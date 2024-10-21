@@ -9,8 +9,8 @@ node_modules
 /dist
 
 # local env files
-.env.local
-.env.*.local
+# .env.local
+# .env.*.local
 
 # Log files
 npm-debug.log*
@@ -29,7 +29,7 @@ pnpm-debug.log*
 # --- End Frontend
 
 # dotenv files
-.env
+# .env
 
 # User-specific files
 *.rsuser

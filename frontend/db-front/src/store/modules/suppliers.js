@@ -1,6 +1,7 @@
 import axios from "axios";
 
-let url = 'http://127.0.0.1:5132/api/suppliers/';
+let api_url = process.env.VUE_APP_API_URL;
+let url = `${api_url}/api/suppliers/`;
 
 export default {
     namespaced: true,
