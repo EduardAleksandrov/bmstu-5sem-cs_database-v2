@@ -12,9 +12,9 @@ public class SuppliersController : ControllerBase
 {
     private readonly AppDbContext _context;
 
-    private readonly ILogger<OrdersController> _logger;
+    private readonly ILogger<SuppliersController> _logger;
 
-    public SuppliersController(ILogger<OrdersController> logger, AppDbContext context)
+    public SuppliersController(ILogger<SuppliersController> logger, AppDbContext context)
     {
         _logger = logger;
         _context = context;
