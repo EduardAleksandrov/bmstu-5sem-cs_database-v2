@@ -124,7 +124,6 @@ export default {
         flex-direction: column;
         //justify-content: center;
         align-items: center;
-        
     }
     &__text-wrapper {
         width: 100%;
