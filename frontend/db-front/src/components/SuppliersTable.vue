@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody >
-        <tr class="table" v-for="el in allSuppliers" :key="el.id">
+        <tr class="table" v-for="el in getSuppliersByPage" :key="el.id">
           <td>{{ el.supplierName }}</td>
           <td>{{ el.contactName }}</td>
           <td>{{ el.email }}</td>
@@ -50,7 +50,7 @@ export default {
       }
     },
     computed: {
-      ...mapGetters('suppliers', ['allSuppliers']),
+      ...mapGetters('suppliers', ['allSuppliers', 'getSuppliersByPage']),
 
     },
     mounted() {

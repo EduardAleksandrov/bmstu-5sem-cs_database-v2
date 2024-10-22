@@ -50,12 +50,24 @@ export default {
         {
             state.suppliersList = suppliers;
         },
-        
+        setPage(state, number)
+        {
+            state.page = number;
+        }
     },
     state: {
         suppliersList: [],
+        itemsPerPage: 2,
+        page: 1,
     },
     getters: {
         allSuppliers: (state) => state.suppliersList,
+        getTotalPages: (state) => Math.ceil(state.suppliersList.length / state.itemsPerPage),
+        getPage: (state) => state.page,
+        getSuppliersByPage(state)
+        {
+            let s = state.suppliersList.map((element) => element);
+            return s.splice(state.itemsPerPage*state.page - state.itemsPerPage, state.itemsPerPage);
+        }
     }
 }

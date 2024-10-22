@@ -35,12 +35,18 @@
         </div>
 
         <SuppliersTable />
+        
+        <div class="pagination-container">
+            <div class="pagination" @click="moveBack">Назад</div>
+            {{ getPage }}
+            <div class="pagination right" @click="moveForward">Вперед</div>
+        </div>
 
     </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapGetters, mapActions, mapMutations } from 'vuex';
 import SuppliersTable from '@/components/SuppliersTable.vue'
 
 export default {
@@ -50,11 +56,13 @@ export default {
     },
     data() {
         return {
-            newSupllier: {SupplierName: "", ContactName: "", Email: "", Phone: ""}
+            newSupllier: {SupplierName: "", ContactName: "", Email: "", Phone: ""},
+            page: 1,
             }
     },
     methods: {
         ...mapActions('suppliers', ['newSuppliers']),
+        ...mapMutations('suppliers', ['setPage']), // Map mutations to methods
         addSupplier()
         {
             if(this.newSupllier.SupplierName != '' && this.newSupllier.ContactName != '' && this.newSupllier.Email != '' && this.newSupllier.Phone != '')
@@ -67,9 +75,22 @@ export default {
             } else {
                 console.log("Не все данные введены");
             }
+        },
+        moveBack()
+        {
+            this.page--;
+            if(this.page < 1) this.page = 1;
+            this.setPage(this.page);
+        },
+        moveForward()
+        {
+            this.page++;
+            if(this.page > this.getTotalPages) this.page = this.getTotalPages;
+            this.setPage(this.page);
         }
     },
     computed: {
+        ...mapGetters('suppliers', ['getTotalPages', 'getPage']),
         titleRBorderOne() {
             return this.newSupllier.SupplierName === ''
         },
@@ -140,4 +161,25 @@ input {
     border-width: 2px;
 }
 
+.pagination-container
+{
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Align items to the left */
+    margin-top: 40px; 
+}
+.pagination
+{
+    margin-right: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.pagination:hover {
+    color: green; /* Change text color for better contrast */
+}
+.pagination:active {
+    color: red; /* Change text color for better contrast */
+}
+.right{
+    margin-left: 20px;
+}
 </style>
