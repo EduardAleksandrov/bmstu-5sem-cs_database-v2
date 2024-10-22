@@ -42,7 +42,7 @@ export default {
       ...mapMutations('suppliers', ['showModal','setCurrentEl']),
       changeSupp(el)
       {
-        console.log(el);
+        // console.log(el);
         this.setCurrentEl(el);
         this.showModal(true);
       },

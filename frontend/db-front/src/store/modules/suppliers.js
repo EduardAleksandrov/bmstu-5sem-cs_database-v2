@@ -52,7 +52,8 @@ export default {
                         'Content-Type': 'application/json'
                     }
                 });
-                await dispatch("fetchSuppliers");
+                // await dispatch("fetchSuppliers");
+                commit('updateSupplier', payload);
             } catch (e) {
                 console.log(e.message);
             }
@@ -74,6 +75,17 @@ export default {
         setCurrentEl(state, payload)
         {
             state.currentElementForModal = payload;
+        },
+        updateSupplier(state, payload)
+        {
+            const index = state.suppliersList.findIndex(supplier => supplier.iD_Supplier === payload.iD_Supplier);
+
+            if (index !== -1) {
+                // Replace the old supplier with the new supplier object
+                state.suppliersList[index] = payload;
+            } else {
+                console.log('Supplier not found');
+            }
         }
     },
     state: {
