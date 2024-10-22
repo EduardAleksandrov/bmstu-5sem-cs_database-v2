@@ -43,6 +43,20 @@ export default {
                 console.log(e.message);
             }
         },
+        async updateSupplier({commit, dispatch}, payload) {
+            let url_d = `${url}${payload.iD_Supplier}`;
+            try {
+                await axios.put(url_d, payload,
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                await dispatch("fetchSuppliers");
+            } catch (e) {
+                console.log(e.message);
+            }
+        }
         
     },
     mutations: {
@@ -53,12 +67,21 @@ export default {
         setPage(state, number)
         {
             state.page = number;
+        },
+        showModal(state, payload) {
+            state.modal = payload;
+        },
+        setCurrentEl(state, payload)
+        {
+            state.currentElementForModal = payload;
         }
     },
     state: {
         suppliersList: [],
         itemsPerPage: 2,
         page: 1,
+        modal: false, //показывать модалку
+        currentElementForModal:{},
     },
     getters: {
         allSuppliers: (state) => state.suppliersList,
@@ -68,6 +91,8 @@ export default {
         {
             let s = state.suppliersList.map((element) => element);
             return s.splice(state.itemsPerPage*state.page - state.itemsPerPage, state.itemsPerPage);
-        }
+        },
+        getModalState: (state) => state.modal,
+        getcurrentElementForModal: (state) => state.currentElementForModal,
     }
 }

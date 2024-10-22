@@ -33,16 +33,18 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions, mapMutations } from 'vuex';
 
 export default {
     name: 'Suppliers',
     methods: {
       ...mapActions('suppliers', ['fetchSuppliers', 'deleteSupplier']),
+      ...mapMutations('suppliers', ['showModal','setCurrentEl']),
       changeSupp(el)
       {
-        console.log(el.iD_Supplier);
-        
+        console.log(el);
+        this.setCurrentEl(el);
+        this.showModal(true);
       },
       deleteSupp(el)
       {

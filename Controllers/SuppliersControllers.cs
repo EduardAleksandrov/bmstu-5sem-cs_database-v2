@@ -80,4 +80,32 @@ public class SuppliersController : ControllerBase
         return NoContent(); // Return 204 No Content
     }
 
+    // PUT: api/suppliers/{id}
+    [HttpPut("{id}", Name = "UpdateSupplier")]
+    public async Task<IActionResult> UpdateOrder(Guid id, [FromBody] Supplier supplier)
+    {
+        if (id != supplier.ID_Supplier)
+        {
+            return BadRequest("Supplier ID mismatch.");
+        }
+
+        // Check if the order exists
+        var existingSupplier = await _context.Suppliers.FindAsync(id); // reference
+        if (existingSupplier == null)
+        {
+            return NotFound();
+        }
+
+        // Update the properties of the existing supplier
+        existingSupplier.SupplierName = supplier.SupplierName;
+        existingSupplier.ContactName = supplier.ContactName;
+        existingSupplier.Email = supplier.Email;
+        existingSupplier.Phone = supplier.Phone;
+        
+        await _context.SaveChangesAsync();
+
+        return NoContent(); // 204 No Content
+    }
+
+
 }

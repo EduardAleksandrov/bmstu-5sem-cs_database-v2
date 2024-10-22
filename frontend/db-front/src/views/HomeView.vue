@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss">
 img{
+  margin-top: 80px;
   width: 200px;
 }
 </style>

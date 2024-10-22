@@ -42,17 +42,21 @@
             <div class="pagination right" @click="moveForward">Вперед</div>
         </div>
 
+        <SuppliersModal v-if="showSuppliersModal" class="modal"/>
     </div>
 </template>
 
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 import SuppliersTable from '@/components/SuppliersTable.vue'
+import SuppliersModal from '@/components/SuppliersModal.vue';
+
 
 export default {
     name: 'HomeView',
     components: {
-        SuppliersTable
+        SuppliersTable,
+        SuppliersModal
     },
     data() {
         return {
@@ -90,7 +94,7 @@ export default {
         }
     },
     computed: {
-        ...mapGetters('suppliers', ['getTotalPages', 'getPage']),
+        ...mapGetters('suppliers', ['getTotalPages', 'getPage','getModalState']),
         titleRBorderOne() {
             return this.newSupllier.SupplierName === ''
         },
@@ -103,6 +107,9 @@ export default {
         titleRBorderFour() {
             return this.newSupllier.Phone === ''
         },
+        showSuppliersModal() {
+            return this.getModalState;
+        }
     }
     
 }
