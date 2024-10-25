@@ -64,7 +64,7 @@ public class SuppliersController : ControllerBase
         return CreatedAtAction(nameof(GetSupplier), new { id = supplier.ID_Supplier }, supplier);
     }
 
-    // DELETE: api/orders/{id}
+    // DELETE: api/suppliers/{id}
     [HttpDelete("{id}", Name = "DeleteSupplier")]
     public async Task<IActionResult> DeleteSupplier(Guid id)
     {
