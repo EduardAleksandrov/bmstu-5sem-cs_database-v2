@@ -20,9 +20,9 @@ public class WarehousesController : ControllerBase
         _context = context;
     }
 
-    // GET: api/suppliers/
+    // GET: api/warehouses/
     [HttpGet(Name = "GetWarehouses")]
-    public async Task<ActionResult<Supplier>> GetWarehouse()
+    public async Task<ActionResult<Warehouse>> GetWarehouse()
     {
         var warehouse = await _context.Warehouses.ToListAsync();
 
@@ -35,7 +35,7 @@ public class WarehousesController : ControllerBase
     }
 
     [HttpPost(Name = "AddWarehouse")]
-    public async Task<ActionResult<Supplier>> PostWarehouse(Warehouse ware)
+    public async Task<ActionResult<Warehouse>> PostWarehouse(Warehouse ware)
     {
         // Validate the incoming DTO
         if (ware == null || ware.WarehouseName == null || ware.Location == null || ware.ManagerName == null || ware.Capacity == 0)
@@ -64,7 +64,7 @@ public class WarehousesController : ControllerBase
         return CreatedAtAction(nameof(GetWarehouse), new { id = warehouse.ID_Warehouse }, warehouse);
     }
 
-    // DELETE: api/orders/{id}
+    // DELETE: api/warehouses/{id}
     [HttpDelete("{id}", Name = "DeleteWarehouse")]
     public async Task<IActionResult> DeleteWarehouse(Guid id)
     {
@@ -80,7 +80,7 @@ public class WarehousesController : ControllerBase
         return NoContent(); // Return 204 No Content
     }
 
-    // PUT: api/suppliers/{id}
+    // PUT: api/warehouses/{id}
     [HttpPut("{id}", Name = "UpdateWarehouse")]
     public async Task<IActionResult> UpdateWarehouse(Guid id, [FromBody] Warehouse warehouse)
     {
