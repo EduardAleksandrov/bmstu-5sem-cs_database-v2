@@ -99,6 +99,7 @@ export default {
         allSuppliers: (state) => state.suppliersList,
         getTotalPages: (state) => Math.ceil(state.suppliersList.length / state.itemsPerPage),
         getPage: (state) => state.page,
+        getPageSupplier: (state) => state.page,
         getSuppliersByPage(state)
         {
             let s = state.suppliersList.map((element) => element);

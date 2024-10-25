@@ -64,6 +64,11 @@ export default {
             page: 1,
             }
     },
+    mounted()
+    {
+        this.page = +this.$route.params.id || +this.$route.query.page || 1;
+        this.setPage(this.page);
+    },
     methods: {
         ...mapActions('suppliers', ['newSuppliers']),
         ...mapMutations('suppliers', ['setPage']), // Map mutations to methods
@@ -85,12 +90,14 @@ export default {
             this.page--;
             if(this.page < 1) this.page = 1;
             this.setPage(this.page);
+            this.$router.push({ name: 'supplier', params: { id: this.page } });
         },
         moveForward()
         {
             this.page++;
             if(this.page > this.getTotalPages) this.page = this.getTotalPages;
             this.setPage(this.page);
+            this.$router.push({ name: 'supplier', params: { id: this.page } });
         }
     },
     computed: {
