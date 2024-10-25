@@ -51,7 +51,6 @@ import { mapGetters, mapActions, mapMutations } from 'vuex';
 import SuppliersTable from '@/components/SuppliersTable.vue'
 import SuppliersModal from '@/components/SuppliersModal.vue';
 
-
 export default {
     name: 'SuppliersView',
     components: {
