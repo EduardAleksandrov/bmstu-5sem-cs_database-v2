@@ -1,40 +1,40 @@
 <template>
     <div class="home">
         <div class="button-container">
-            <button @click="addSupplier">Добавить поставщика</button>
+            <button @click="addCustomer">Добавить покупателя</button>
             <table>
                 <thead>
                     <tr class="table">
-                    <th>Название поставщика</th>
-                    <th>Контактное имя</th>
-                    <th>Email</th>
+                    <th>Имя</th>
                     <th>Phone</th>
+                    <th>Email</th>
+                    <th>Адрес</th>
                     </tr>
                 </thead>
                 <tbody >
                     <tr class="table">
                     <td>
                         <input :class="[{'red-border': titleRBorderOne}]"
-                        v-model="newSupllier.SupplierName" placeholder="Введите название поставщика" />
+                        v-model="newCustomer.CustomerName" placeholder="Введите имя" />
                     </td>
                     <td>                
                         <input  :class="[{'red-border': titleRBorderTwo}]"
-                        v-model="newSupllier.ContactName" placeholder="Введите контактное имя" />
+                        v-model="newCustomer.Phone" placeholder="Введите телефон" />
                     </td>
                     <td>                
                         <input :class="[{'red-border': titleRBorderThree}]"
-                        v-model="newSupllier.Email" placeholder="Введите email" />
+                        v-model="newCustomer.Email" placeholder="Введите email" />
                     </td>
                     <td>                
                         <input :class="[{'red-border': titleRBorderFour}]"
-                        v-model="newSupllier.Phone" placeholder="Введите телефон" />
+                        v-model="newCustomer.Address" placeholder="Введите адрес" />
                     </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <SuppliersTable />
+        <CustomersTable />
         
         <div class="pagination-container">
             <div class="pagination" @click="moveBack">Назад</div>
@@ -42,40 +42,40 @@
             <div class="pagination right" @click="moveForward">Вперед</div>
         </div>
 
-        <SuppliersModal v-if="showSuppliersModal" class="modal"/>
+        <CustomersModal v-if="showCustomersModal" class="modal"/>
     </div>
 </template>
 
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex';
-import SuppliersTable from '@/components/SuppliersTable.vue'
-import SuppliersModal from '@/components/SuppliersModal.vue';
+import CustomersTable from '@/components/CustomersTable.vue'
+import CustomersModal from '@/components/CustomersModal.vue';
 
 
 export default {
-    name: 'SuppliersView',
+    name: 'CustomersView',
     components: {
-        SuppliersTable,
-        SuppliersModal
+        CustomersTable,
+        CustomersModal
     },
     data() {
         return {
-            newSupllier: {SupplierName: "", ContactName: "", Email: "", Phone: ""},
+            newCustomer: {CustomerName: "", Phone: "", Email: "", Address: ""},
             page: 1,
             }
     },
     methods: {
-        ...mapActions('suppliers', ['newSuppliers']),
-        ...mapMutations('suppliers', ['setPage']), // Map mutations to methods
-        addSupplier()
+        ...mapActions('customers', ['newCustomers']),
+        ...mapMutations('customers', ['setPage']), // Map mutations to methods
+        addCustomer()
         {
-            if(this.newSupllier.SupplierName != '' && this.newSupllier.ContactName != '' && this.newSupllier.Email != '' && this.newSupllier.Phone != '')
+            if(this.newCustomer.CustomerName != '' && this.newCustomer.Phone != '' && this.newCustomer.Email != '' && this.newCustomer.Address != '')
             {
-                this.newSuppliers(this.newSupllier);
-                this.newSupllier.SupplierName = '';
-                this.newSupllier.ContactName = '';
-                this.newSupllier.Email = '';
-                this.newSupllier.Phone = ''
+                this.newCustomers(this.newCustomer);
+                this.newCustomer.CustomerName = '';
+                this.newCustomer.Phone = '';
+                this.newCustomer.Email = '';
+                this.newCustomer.Address = ''
             } else {
                 console.log("Не все данные введены");
             }
@@ -94,20 +94,20 @@ export default {
         }
     },
     computed: {
-        ...mapGetters('suppliers', ['getTotalPages', 'getPage','getModalState']),
+        ...mapGetters('customers', ['getTotalPages', 'getPage','getModalState']),
         titleRBorderOne() {
-            return this.newSupllier.SupplierName === ''
+            return this.newCustomer.CustomerName === ''
         },
         titleRBorderTwo() {
-            return this.newSupllier.ContactName === ''
+            return this.newCustomer.Phone === ''
         },
         titleRBorderThree() {
-            return this.newSupllier.Email === ''
+            return this.newCustomer.Email === ''
         },
         titleRBorderFour() {
-            return this.newSupllier.Phone === ''
+            return this.newCustomer.Address === ''
         },
-        showSuppliersModal() {
+        showCustomersModal() {
             return this.getModalState;
         }
     }

@@ -1,30 +1,27 @@
 <template>
     <div class="listOfSyppliers__wrapper">
-      <!-- <div class="listOfSyppliers__items" v-for="el in allSuppliers" :key="el.Id">
-        {{ el.contactName }}
-      </div> -->
       <table>
       <thead>
         <tr class="table">
-          <th>Название поставщика</th>
-          <th>Контактное имя</th>
-          <th>Email</th>
+          <th>Имя</th>
           <th>Phone</th>
+          <th>Email</th>
+          <th>Адрес</th>
           <th>Action</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody >
-        <tr class="table" v-for="el in getSuppliersByPage" :key="el.id">
-          <td>{{ el.supplierName }}</td>
-          <td>{{ el.contactName }}</td>
-          <td>{{ el.email }}</td>
+        <tr class="table" v-for="el in getCustomersByPage" :key="el.id">
+          <td>{{ el.customerName }}</td>
           <td>{{ el.phone }}</td>
+          <td>{{ el.email }}</td>
+          <td>{{ el.address }}</td>
           <td>
-            <button @click="changeSupp(el)">Изменить</button>
+            <button @click="changeCus(el)">Изменить</button>
           </td>
           <td>
-            <button @click="deleteSupp(el)">Удалить</button>
+            <button @click="deleteCus(el)">Удалить</button>
           </td>
         </tr>
       </tbody>
@@ -36,27 +33,27 @@
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 
 export default {
-    name: 'Suppliers',
+    name: 'Customers',
     methods: {
-      ...mapActions('suppliers', ['fetchSuppliers', 'deleteSupplier']),
-      ...mapMutations('suppliers', ['showModal','setCurrentEl']),
-      changeSupp(el)
+      ...mapActions('customers', ['fetchCustomers', 'deleteCustomer']),
+      ...mapMutations('customers', ['showModal','setCurrentEl']),
+      changeCus(el)
       {
         // console.log(el);
         this.setCurrentEl(el);
         this.showModal(true);
       },
-      deleteSupp(el)
+      deleteCus(el)
       {
-        this.deleteSupplier(el);
+        this.deleteCustomer(el);
       }
     },
     computed: {
-      ...mapGetters('suppliers', ['allSuppliers', 'getSuppliersByPage']),
+      ...mapGetters('customers', ['allCustomers', 'getCustomersByPage']),
 
     },
     mounted() {
-      this.$store.dispatch('suppliers/fetchSuppliers');
+      this.$store.dispatch('customers/fetchCustomers');
     },
 }
 </script>

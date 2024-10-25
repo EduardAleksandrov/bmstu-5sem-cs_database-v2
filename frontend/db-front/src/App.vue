@@ -3,7 +3,8 @@
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/suppliers">Поставщики</router-link> |
-      <router-link to="/warehouses">Склады</router-link>
+      <router-link to="/warehouses">Склады</router-link> |
+      <router-link to="/customers">Покупатели</router-link>
     </nav>
     <router-view/>
   </div>
