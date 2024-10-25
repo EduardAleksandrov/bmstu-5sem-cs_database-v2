@@ -82,7 +82,7 @@ public class SuppliersController : ControllerBase
 
     // PUT: api/suppliers/{id}
     [HttpPut("{id}", Name = "UpdateSupplier")]
-    public async Task<IActionResult> UpdateOrder(Guid id, [FromBody] Supplier supplier)
+    public async Task<IActionResult> UpdateSupplier(Guid id, [FromBody] Supplier supplier)
     {
         if (id != supplier.ID_Supplier)
         {

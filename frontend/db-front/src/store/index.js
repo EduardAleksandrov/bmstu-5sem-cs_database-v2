@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import suppliers from './modules/suppliers'
+import warehouses from './modules/warehouses'
 
 export default createStore({
   state: {
@@ -12,5 +13,6 @@ export default createStore({
   },
   modules: {
     suppliers: suppliers,
+    warehouses: warehouses,
   }
 })

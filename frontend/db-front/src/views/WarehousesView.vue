@@ -1,40 +1,40 @@
 <template>
     <div class="home">
         <div class="button-container">
-            <button @click="addSupplier">Добавить поставщика</button>
+            <button @click="addWarehouse">Добавить склад</button>
             <table>
                 <thead>
                     <tr class="table">
-                    <th>Название поставщика</th>
-                    <th>Контактное имя</th>
-                    <th>email</th>
-                    <th>phone</th>
+                    <th>Название склада</th>
+                    <th>Местоположение</th>
+                    <th>Менеджер</th>
+                    <th>Емкость</th>
                     </tr>
                 </thead>
                 <tbody >
                     <tr class="table">
                     <td>
                         <input :class="[{'red-border': titleRBorderOne}]"
-                        v-model="newSupllier.SupplierName" placeholder="Введите название поставщика" />
+                        v-model="newWarehouse.WarehouseName" placeholder="Введите название склада" />
                     </td>
                     <td>                
                         <input  :class="[{'red-border': titleRBorderTwo}]"
-                        v-model="newSupllier.ContactName" placeholder="Введите контактное имя" />
+                        v-model="newWarehouse.Location" placeholder="Введите местоположение" />
                     </td>
                     <td>                
                         <input :class="[{'red-border': titleRBorderThree}]"
-                        v-model="newSupllier.Email" placeholder="Введите email" />
+                        v-model="newWarehouse.ManagerName" placeholder="Введите менеджера" />
                     </td>
                     <td>                
                         <input :class="[{'red-border': titleRBorderFour}]"
-                        v-model="newSupllier.Phone" placeholder="Введите телефон" />
+                        v-model="newWarehouse.Capacity" placeholder="Введите емкость" />
                     </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <SuppliersTable />
+        <WarehousesTable />
         
         <div class="pagination-container">
             <div class="pagination" @click="moveBack">Назад</div>
@@ -42,40 +42,40 @@
             <div class="pagination right" @click="moveForward">Вперед</div>
         </div>
 
-        <SuppliersModal v-if="showSuppliersModal" class="modal"/>
+        <WarehousesModal v-if="showWarehousesModal" class="modal"/>
     </div>
 </template>
 
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex';
-import SuppliersTable from '@/components/SuppliersTable.vue'
-import SuppliersModal from '@/components/SuppliersModal.vue';
+import WarehousesTable from '@/components/WarehousesTable.vue'
+import WarehousesModal from '@/components/WarehousesModal.vue';
 
 
 export default {
-    name: 'HomeView',
+    name: 'WarehousesView',
     components: {
-        SuppliersTable,
-        SuppliersModal
+        WarehousesTable,
+        WarehousesModal
     },
     data() {
         return {
-            newSupllier: {SupplierName: "", ContactName: "", Email: "", Phone: ""},
+            newWarehouse: {WarehouseName: "", Location: "", ManagerName: "", Capacity: 0},
             page: 1,
             }
     },
     methods: {
-        ...mapActions('suppliers', ['newSuppliers']),
-        ...mapMutations('suppliers', ['setPage']), // Map mutations to methods
-        addSupplier()
+        ...mapActions('warehouses', ['newWarehouses']),
+        ...mapMutations('warehouses', ['setPage']), // Map mutations to methods
+        addWarehouse()
         {
-            if(this.newSupllier.SupplierName != '' && this.newSupllier.ContactName != '' && this.newSupllier.Email != '' && this.newSupllier.Phone != '')
+            if(this.newWarehouse.WarehouseName != '' && this.newWarehouse.Location != '' && this.newWarehouse.ManagerName != '' && this.newWarehouse.Capacity != 0 && this.newWarehouse.Capacity != '')
             {
-                this.newSuppliers(this.newSupllier);
-                this.newSupllier.SupplierName = '';
-                this.newSupllier.ContactName = '';
-                this.newSupllier.Email = '';
-                this.newSupllier.Phone = ''
+                this.newWarehouses(this.newWarehouse);
+                this.newWarehouse.WarehouseName = '';
+                this.newWarehouse.Location = '';
+                this.newWarehouse.ManagerName = '';
+                this.newWarehouse.Capacity = 0
             } else {
                 console.log("Не все данные введены");
             }
@@ -94,20 +94,20 @@ export default {
         }
     },
     computed: {
-        ...mapGetters('suppliers', ['getTotalPages', 'getPage','getModalState']),
+        ...mapGetters('warehouses', ['getTotalPages', 'getPage','getModalState']),
         titleRBorderOne() {
-            return this.newSupllier.SupplierName === ''
+            return this.newWarehouse.WarehouseName === ''
         },
         titleRBorderTwo() {
-            return this.newSupllier.ContactName === ''
+            return this.newWarehouse.Location === ''
         },
         titleRBorderThree() {
-            return this.newSupllier.Email === ''
+            return this.newWarehouse.ManagerName === ''
         },
         titleRBorderFour() {
-            return this.newSupllier.Phone === ''
+            return this.newWarehouse.Capacity === 0 || this.newWarehouse.Capacity === ''
         },
-        showSuppliersModal() {
+        showWarehousesModal() {
             return this.getModalState;
         }
     }
