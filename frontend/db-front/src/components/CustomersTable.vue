@@ -56,6 +56,7 @@ export default {
       this.$store.dispatch('customers/fetchCustomers');
     },
 }
+
 </script>
 
 <style lang="scss" scoped>
