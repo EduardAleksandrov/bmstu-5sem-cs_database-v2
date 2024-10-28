@@ -74,8 +74,20 @@ public class SuppliersController : ControllerBase
             return NotFound(); // Return 404 if the order is not found
         }
 
-        _context.Suppliers.Remove(supplier); // Remove the order from the context
-        await _context.SaveChangesAsync(); // Save changes to the database
+        try
+        {
+            _context.Suppliers.Remove(supplier); // Remove the order from the context
+            await _context.SaveChangesAsync(); // Save changes to the database
+        } catch(DbUpdateException ex) {
+            // Здесь вы можете проверить, является ли исключение результатом ограничения внешнего ключа
+            // Например, вы можете проверить, содержит ли сообщение об ошибке определенные ключевые слова
+            if (ex.InnerException != null && ex.InnerException.Message.Contains("update or delete"))
+            {
+                return Conflict("Cannot delete supplier because it is referenced by other entities."); // Возвращаем 409 Conflict
+            }
+            // Если это не связано с ограничением внешнего ключа, вы можете обработать другие ошибки
+            return StatusCode(500, "An error occurred while deleting the supplier."); // Возвращаем 500 Internal Server Error
+        }
 
         return NoContent(); // Return 204 No Content
     }

@@ -36,12 +36,14 @@ namespace DBase.Data
             modelBuilder.Entity<Product>()
             .HasOne(p => p.Supplier)
             .WithMany(s => s.Products)
-            .HasForeignKey(p => p.SupplierID);
+            .HasForeignKey(p => p.SupplierID)
+            .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Product>()
             .HasOne(p => p.Warehouse)
             .WithMany(w => w.Products)
-            .HasForeignKey(p => p.WarehouseID);
+            .HasForeignKey(p => p.WarehouseID)
+            .OnDelete(DeleteBehavior.Restrict);
 
             // UTC Datetime
             modelBuilder.Entity<Order>()
