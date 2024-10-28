@@ -4,7 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link :to="'/suppliers/' +   getPageSupplier">Поставщики</router-link> |
       <router-link to="/warehouses">Склады</router-link> |
-      <router-link to="/customers">Покупатели</router-link>
+      <router-link to="/customers">Покупатели</router-link> |
+      <router-link to="/products">Товары</router-link> |
     </nav>
     <router-view/>
   </div>

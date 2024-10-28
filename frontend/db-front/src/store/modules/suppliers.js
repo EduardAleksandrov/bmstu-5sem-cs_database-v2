@@ -107,5 +107,16 @@ export default {
         },
         getModalState: (state) => state.modal,
         getcurrentElementForModal: (state) => state.currentElementForModal,
+        getSortSuppliers(state) {
+            // Create a shallow copy of the suppliersList to avoid mutating the original state
+            let sortedSuppliers = [...state.suppliersList];
+        
+            // Sort the suppliers by supplierName using localeCompare
+            sortedSuppliers.sort((a, b) => {
+                return a.supplierName.localeCompare(b.supplierName);
+            });
+        
+            return sortedSuppliers;
+        }
     }
 }

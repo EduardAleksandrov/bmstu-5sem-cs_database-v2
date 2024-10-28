@@ -1,21 +1,21 @@
 import axios from "axios";
 
 let api_url = process.env.VUE_APP_API_URL;
-let url = `${api_url}/api/warehouses/`;
+let url = `${api_url}/api/products/`;
 
 export default {
     namespaced: true,
     actions: {
-        async fetchWarehouses({commit}) 
+        async fetchProducts({commit}) 
         {
             try {
-                const warehouses = await axios.get(url);
-                commit('setWarehouses', warehouses.data);
+                const products = await axios.get(url);
+                commit('setProducts', products.data);
             } catch (e) {
                 console.log(e.message);
             }
         },
-        async newWarehouses({commit, dispatch}, payload) 
+        async newProducts({commit, dispatch}, payload) 
         {
             try {
                 const response = await axios.post(url, payload, 
@@ -26,24 +26,25 @@ export default {
                 });
                 console.log('Response:', response.data);
 
-                await dispatch("fetchWarehouses");
+                await dispatch("fetchProducts");
             } catch (e) {
                 console.log(e.message);
             }
         },
-        async deleteWarehouse({commit, dispatch}, payload) 
+        async deleteProduct({commit, dispatch}, payload) 
         {
-            let url_d = `${url}${payload.iD_Warehouse}`;
+            let url_d = `${url}${payload.iD_Product}`;
             try {
                 const response = await axios.delete(url_d);
                 console.log('Response:', response.data);
-                await dispatch("fetchWarehouses");
+                // console.log(payload);
+                await dispatch("fetchProducts");
             } catch (e) {
                 console.log(e.message);
             }
         },
-        async updateWarehouse({commit, dispatch}, payload) {
-            let url_d = `${url}${payload.iD_Warehouse}`;
+        async updateProduct({commit, dispatch}, payload) {
+            let url_d = `${url}${payload.iD_Product}`;
             try {
                 await axios.put(url_d, payload,
                 {
@@ -51,8 +52,7 @@ export default {
                         'Content-Type': 'application/json'
                     }
                 });
-                // await dispatch("fetchSuppliers");
-                commit('updateWarehouse', payload);
+                commit('updateProduct', payload);
             } catch (e) {
                 console.log(e.message);
             }
@@ -60,9 +60,9 @@ export default {
         
     },
     mutations: {
-        setWarehouses(state, warehouses) 
+        setProducts(state, products) 
         {
-            state.warehousesList = warehouses;
+            state.productsList = products;
         },
         setPage(state, number)
         {
@@ -75,44 +75,36 @@ export default {
         {
             state.currentElementForModal = payload;
         },
-        updateWarehouse(state, payload)
+        updateProduct(state, payload)
         {
-            const index = state.warehousesList.findIndex(warehouse => warehouse.iD_Warehouse === payload.iD_Warehouse);
+            const index = state.productsList.findIndex(product => product.iD_Product === payload.iD_Product);
 
             if (index !== -1) {
-                // Replace the old warehouse with the new warehouse object
-                state.warehousesList[index] = payload;
+                // Replace the old product with the new product object
+                state.productsList[index] = payload;
             } else {
-                console.log('Supplier not found');
+                console.log('Product not found');
             }
         }
     },
     state: {
-        warehousesList: [],
+        productsList: [],
         itemsPerPage: 2,
         page: 1,
         modal: false, //показывать модалку
         currentElementForModal:{},
     },
     getters: {
-        allWarehouses: (state) => state.warehousesList,
-        getTotalPages: (state) => Math.ceil(state.warehousesList.length / state.itemsPerPage),
+        allProducts: (state) => state.productsList,
+        getTotalPages: (state) => Math.ceil(state.productsList.length / state.itemsPerPage),
         getPage: (state) => state.page,
-        getWarehousesByPage(state)
+        getPageProduct: (state) => state.page,
+        getProductsByPage(state)
         {
-            let s = state.warehousesList.map((element) => element);
+            let s = state.productsList.map((element) => element);
             return s.splice(state.itemsPerPage*state.page - state.itemsPerPage, state.itemsPerPage);
         },
         getModalState: (state) => state.modal,
         getcurrentElementForModal: (state) => state.currentElementForModal,
-        getSortWarehouses(state) {
-            let sortedWarehouses = [...state.warehousesList];
-        
-            sortedWarehouses.sort((a, b) => {
-                return a.warehouseName.localeCompare(b.warehouseName);
-            });
-        
-            return sortedWarehouses;
-        }
     }
 }
