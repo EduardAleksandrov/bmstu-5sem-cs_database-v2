@@ -38,7 +38,7 @@
         
         <div class="pagination-container">
             <div class="pagination" @click="moveBack">Назад</div>
-            {{ getPage }}
+            {{ getPage }} из {{ getTotalPages }}
             <div class="pagination right" @click="moveForward">Вперед</div>
         </div>
 
