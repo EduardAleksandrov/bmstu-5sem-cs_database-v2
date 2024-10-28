@@ -54,11 +54,21 @@
             </table>
         </div>
 
-        <select v-model="sort" id="options" class="styled-select-sort">
-            <option value="0"> По умолчанию </option>
-            <option value="1"> По возрастанию </option>
-            <option value="2"> По убыванию </option>
-        </select>
+        <div class="styled-select-sort-div">
+            Товар:
+            <select v-model="sort" id="options" class="styled-select-sort">
+                <option value="0"> По умолчанию </option>
+                <option value="1"> По возрастанию </option>
+                <option value="2"> По убыванию </option>
+            </select>
+            
+            Производитель:
+            <select v-model="sortProducer" id="optionss" class="styled-select-sort">
+                <option value="0"> По умолчанию </option>
+                <option value="1"> По возрастанию </option>
+                <option value="2"> По убыванию </option>
+            </select>
+        </div>
 
         <ProductsTable />
         
@@ -88,13 +98,20 @@ export default {
         return {
             newProduct: {SupplierID: "", WarehouseID: "", ProductName: "", Producer: "", UnitPrice: 0, QuantityInStock: 0},
             page: 1,
-            sort: 0
+            sort: 0,
+            sortProducer: 0
             }
     },
     watch: {
         sort()
         {
             this.changeSort(this.sort);
+            this.sortProducer = 0;
+        },
+        sortProducer()
+        {
+            this.changeSortProducer(this.sortProducer);
+            this.sort = 0;
         }
     },
     mounted()
@@ -108,7 +125,7 @@ export default {
         ...mapActions('products', ['newProducts']),
         ...mapActions('suppliers', ['fetchSuppliers']),
         ...mapActions('warehouses', ['fetchWarehouses']),
-        ...mapMutations('products', ['setPage','changeSort']), // Map mutations to methods
+        ...mapMutations('products', ['setPage','changeSort','changeSortProducer']), // Map mutations to methods
         addProduct()
         {
             if(this.newProduct.SupplierID != '' && 
@@ -266,7 +283,16 @@ input {
 }
 
 
+.styled-select-sort-div{
+    display: flex; /* Use flexbox for alignment */
+    justify-content: flex-start; /* Align items to the left */
+    margin-bottom: 10px;
+    align-items: center;
+}
+
 .styled-select-sort {
+    margin-right: 20px;
+    margin-left: 10px;
     width: 10%; /* Full width */
     padding: 10px; /* Padding for better spacing */
     border: 2px solid #cccccc; /* Light gray border */
@@ -276,10 +302,6 @@ input {
     color: #333; /* Text color */
     cursor: pointer; /* Pointer cursor on hover */
     transition: border-color 0.3s; /* Smooth transition for border color */
-    
-    display: flex; /* Use flexbox for alignment */
-    justify-content: flex-start; /* Align items to the left */
-    margin-bottom: 10px;
 }
 
 .styled-select-sort:focus {

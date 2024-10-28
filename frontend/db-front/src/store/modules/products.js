@@ -89,7 +89,11 @@ export default {
         changeSort(state, payload)
         {
             state.sorting = payload;
-        }
+        },
+        changeSortProducer(state, payload)
+        {
+            state.sortingProducer = payload;
+        },
     },
     state: {
         productsList: [],
@@ -98,6 +102,7 @@ export default {
         modal: false, //показывать модалку
         currentElementForModal:{},
         sorting: 0,
+        sortingProducer: 0
     },
     getters: {
         allProducts: (state) => state.productsList,
@@ -108,17 +113,26 @@ export default {
         {
             let s = state.productsList.map((element) => element);
 
-            if(state.sorting == 1)
+            if(state.sorting != 0 || state.sortingProducer != 0)
             {
                 s.sort((a, b) => {
-                    return a.productName.localeCompare(b.productName);
-                });
-            } else if(state.sorting == 2)
-            {
-                s.sort((a, b) => {
-                    return b.productName.localeCompare(a.productName);
+                    let n;
+                    if(state.sorting == 1)
+                    {
+                        return a.productName.localeCompare(b.productName);
+                    } else if(state.sorting == 2)
+                    {
+                        return b.productName.localeCompare(a.productName);
+                    } else if(state.sortingProducer == 1)
+                    {
+                        return a.producer.localeCompare(b.producer);
+                    } else if(state.sortingProducer == 2)
+                    {
+                        return b.producer.localeCompare(a.producer);
+                    }
                 });
             }
+            
 
             return s.splice(state.itemsPerPage*state.page - state.itemsPerPage, state.itemsPerPage);
         },
