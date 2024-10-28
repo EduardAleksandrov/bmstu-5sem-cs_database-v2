@@ -62,12 +62,27 @@
                 <option value="2"> По убыванию </option>
             </select>
             
-            Производитель:
-            <select v-model="sortProducer" id="optionss" class="styled-select-sort">
+            Поставщик:
+            <select v-model="sortSupplier" id="optionss" class="styled-select-sort">
                 <option value="0"> По умолчанию </option>
                 <option value="1"> По возрастанию </option>
                 <option value="2"> По убыванию </option>
             </select>
+
+            Склад:
+            <select v-model="sortWarehouse" id="optionsss" class="styled-select-sort">
+                <option value="0"> По умолчанию </option>
+                <option value="1"> По возрастанию </option>
+                <option value="2"> По убыванию </option>
+            </select>
+
+            Производитель:
+            <select v-model="sortProducer" id="optionssss" class="styled-select-sort">
+                <option value="0"> По умолчанию </option>
+                <option value="1"> По возрастанию </option>
+                <option value="2"> По убыванию </option>
+            </select>
+            
         </div>
 
         <ProductsTable />
@@ -99,7 +114,9 @@ export default {
             newProduct: {SupplierID: "", WarehouseID: "", ProductName: "", Producer: "", UnitPrice: 0, QuantityInStock: 0},
             page: 1,
             sort: 0,
-            sortProducer: 0
+            sortProducer: 0,
+            sortSupplier: 0,
+            sortWarehouse: 0,
             }
     },
     watch: {
@@ -107,11 +124,29 @@ export default {
         {
             this.changeSort(this.sort);
             this.sortProducer = 0;
+            this.sortSupplier = 0;
+            this.sortWarehouse = 0;
         },
         sortProducer()
         {
             this.changeSortProducer(this.sortProducer);
             this.sort = 0;
+            this.sortSupplier = 0;
+            this.sortWarehouse = 0;
+        },
+        sortSupplier()
+        {
+            this.changeSortSupplier(this.sortSupplier);
+            this.sort = 0;
+            this.sortProducer = 0;
+            this.sortWarehouse = 0;
+        },
+        sortWarehouse()
+        {
+            this.changeSortWarehouse(this.sortWarehouse);
+            this.sort = 0;
+            this.sortProducer = 0;
+            this.sortSupplier = 0;
         }
     },
     mounted()
@@ -125,7 +160,7 @@ export default {
         ...mapActions('products', ['newProducts']),
         ...mapActions('suppliers', ['fetchSuppliers']),
         ...mapActions('warehouses', ['fetchWarehouses']),
-        ...mapMutations('products', ['setPage','changeSort','changeSortProducer']), // Map mutations to methods
+        ...mapMutations('products', ['setPage','changeSort','changeSortProducer','changeSortSupplier','changeSortWarehouse']), // Map mutations to methods
         addProduct()
         {
             if(this.newProduct.SupplierID != '' && 

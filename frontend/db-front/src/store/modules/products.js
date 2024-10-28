@@ -94,6 +94,14 @@ export default {
         {
             state.sortingProducer = payload;
         },
+        changeSortSupplier(state, payload)
+        {
+            state.sortingSupplier = payload;
+        },
+        changeSortWarehouse(state, payload)
+        {
+            state.sortingWarehouse = payload;
+        }
     },
     state: {
         productsList: [],
@@ -102,21 +110,22 @@ export default {
         modal: false, //показывать модалку
         currentElementForModal:{},
         sorting: 0,
-        sortingProducer: 0
+        sortingProducer: 0,
+        sortingSupplier: 0,
+        sortingWarehouse: 0,
     },
     getters: {
         allProducts: (state) => state.productsList,
         getTotalPages: (state) => Math.ceil(state.productsList.length / state.itemsPerPage),
         getPage: (state) => state.page,
         getPageProduct: (state) => state.page,
-        getProductsByPage(state)
+        getProductsByPage(state, getters, rootState, rootGetters)
         {
             let s = state.productsList.map((element) => element);
 
-            if(state.sorting != 0 || state.sortingProducer != 0)
+            if(state.sorting != 0 || state.sortingProducer != 0 || state.sortingSupplier != 0 || state.sortingWarehouse != 0)
             {
                 s.sort((a, b) => {
-                    let n;
                     if(state.sorting == 1)
                     {
                         return a.productName.localeCompare(b.productName);
@@ -129,11 +138,30 @@ export default {
                     } else if(state.sortingProducer == 2)
                     {
                         return b.producer.localeCompare(a.producer);
+                    } else if(state.sortingSupplier == 1)
+                    {
+                        let supplier_a = rootGetters['suppliers/allSuppliers'].find(s => s.iD_Supplier === a.supplierID);
+                        let supplier_b = rootGetters['suppliers/allSuppliers'].find(s => s.iD_Supplier === b.supplierID);
+                        return supplier_a.supplierName.localeCompare(supplier_b.supplierName);
+                    } else if(state.sortingSupplier == 2)
+                    {
+                        let supplier_a = rootGetters['suppliers/allSuppliers'].find(s => s.iD_Supplier === a.supplierID);
+                        let supplier_b = rootGetters['suppliers/allSuppliers'].find(s => s.iD_Supplier === b.supplierID);
+                        return supplier_b.supplierName.localeCompare(supplier_a.supplierName);
+                    }else if(state.sortingWarehouse == 1)
+                    {
+                        
+                        let warehouse_a = rootGetters['warehouses/allWarehouses'].find(s => s.iD_Warehouse === a.warehouseID);
+                        let warehouse_b = rootGetters['warehouses/allWarehouses'].find(s => s.iD_Warehouse === b.warehouseID);
+                        return warehouse_a.warehouseName.localeCompare(warehouse_b.warehouseName);
+                    } else if(state.sortingWarehouse == 2)
+                    {
+                        let warehouse_a = rootGetters['warehouses/allWarehouses'].find(s => s.iD_Warehouse === a.warehouseID);
+                        let warehouse_b = rootGetters['warehouses/allWarehouses'].find(s => s.iD_Warehouse === b.warehouseID);
+                        return warehouse_b.warehouseName.localeCompare(warehouse_a.warehouseName);
                     }
                 });
             }
-            
-
             return s.splice(state.itemsPerPage*state.page - state.itemsPerPage, state.itemsPerPage);
         },
         getModalState: (state) => state.modal,
