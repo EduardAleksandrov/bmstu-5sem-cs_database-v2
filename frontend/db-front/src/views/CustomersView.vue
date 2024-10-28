@@ -34,6 +34,12 @@
             </table>
         </div>
 
+        <select v-model="sort" id="options" class="styled-select">
+            <option value="0"> По умолчанию </option>
+            <option value="1"> По возрастанию </option>
+            <option value="2"> По убыванию </option>
+        </select>
+
         <CustomersTable />
         
         <div class="pagination-container">
@@ -62,11 +68,18 @@ export default {
         return {
             newCustomer: {CustomerName: "", Phone: "", Email: "", Address: ""},
             page: 1,
+            sort: 0
             }
+    },
+    watch: {
+        sort()
+        {
+            this.changeSort(this.sort);
+        }
     },
     methods: {
         ...mapActions('customers', ['newCustomers']),
-        ...mapMutations('customers', ['setPage']), // Map mutations to methods
+        ...mapMutations('customers', ['setPage', 'changeSort']), // Map mutations to methods
         addCustomer()
         {
             if(this.newCustomer.CustomerName != '' && this.newCustomer.Phone != '' && this.newCustomer.Email != '' && this.newCustomer.Address != '')
@@ -188,5 +201,33 @@ input {
 }
 .right{
     margin-left: 20px;
+}
+
+
+
+
+.styled-select {
+    width: 10%; /* Full width */
+    padding: 10px; /* Padding for better spacing */
+    border: 2px solid #cccccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    font-size: 16px; /* Font size */
+    color: #333; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+    
+    display: flex; /* Use flexbox for alignment */
+    justify-content: flex-start; /* Align items to the left */
+    margin-bottom: 10px;
+}
+
+.styled-select:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.styled-select option {
+    padding: 10px; /* Padding for options */
 }
 </style>

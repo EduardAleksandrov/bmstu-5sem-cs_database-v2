@@ -6,9 +6,9 @@
       <table>
       <thead>
         <tr class="table">
+          <th>Название товара</th>
           <th>Поставщик</th>
           <th>Склад</th>
-          <th>Название товара</th>
           <th>Производитель</th>
           <th>Цена за единицу</th>
           <th>Количество на складе</th>
@@ -18,9 +18,9 @@
       </thead>
       <tbody >
         <tr class="table" v-for="el in getProductsByPage" :key="el.iD_Product">
+          <td>{{ el.productName }}</td>
           <td>{{ getSupplierById(el.supplierID) }}</td>
           <td>{{ getWarehouseById(el.warehouseID) }}</td>
-          <td>{{ el.productName }}</td>
           <td>{{ el.producer }}</td>
           <td>{{ el.unitPrice }}</td>
           <td>{{ el.quantityInStock }}</td>

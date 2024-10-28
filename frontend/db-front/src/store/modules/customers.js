@@ -85,6 +85,10 @@ export default {
             } else {
                 console.log('Customer not found');
             }
+        },
+        changeSort(state, payload)
+        {
+            state.sorting = payload;
         }
     },
     state: {
@@ -93,6 +97,7 @@ export default {
         page: 1,
         modal: false, //показывать модалку
         currentElementForModal:{},
+        sorting: 0,
     },
     getters: {
         allCustomers: (state) => state.customersList,
@@ -101,6 +106,19 @@ export default {
         getCustomersByPage(state)
         {
             let s = state.customersList.map((element) => element);
+
+            if(state.sorting == 1)
+            {
+                s.sort((a, b) => {
+                    return a.customerName.localeCompare(b.customerName);
+                });
+            } else if(state.sorting == 2)
+            {
+                s.sort((a, b) => {
+                    return b.customerName.localeCompare(a.customerName);
+                });
+            }
+
             return s.splice(state.itemsPerPage*state.page - state.itemsPerPage, state.itemsPerPage);
         },
         getModalState: (state) => state.modal,

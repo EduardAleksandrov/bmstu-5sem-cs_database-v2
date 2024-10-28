@@ -85,6 +85,10 @@ export default {
             } else {
                 console.log('Product not found');
             }
+        },
+        changeSort(state, payload)
+        {
+            state.sorting = payload;
         }
     },
     state: {
@@ -93,6 +97,7 @@ export default {
         page: 1,
         modal: false, //показывать модалку
         currentElementForModal:{},
+        sorting: 0,
     },
     getters: {
         allProducts: (state) => state.productsList,
@@ -102,6 +107,19 @@ export default {
         getProductsByPage(state)
         {
             let s = state.productsList.map((element) => element);
+
+            if(state.sorting == 1)
+            {
+                s.sort((a, b) => {
+                    return a.productName.localeCompare(b.productName);
+                });
+            } else if(state.sorting == 2)
+            {
+                s.sort((a, b) => {
+                    return b.productName.localeCompare(a.productName);
+                });
+            }
+
             return s.splice(state.itemsPerPage*state.page - state.itemsPerPage, state.itemsPerPage);
         },
         getModalState: (state) => state.modal,

@@ -86,6 +86,10 @@ export default {
             } else {
                 console.log('Supplier not found');
             }
+        },
+        changeSort(state, payload)
+        {
+            state.sorting = payload;
         }
     },
     state: {
@@ -94,6 +98,7 @@ export default {
         page: 1,
         modal: false, //показывать модалку
         currentElementForModal:{},
+        sorting: 0,
     },
     getters: {
         allSuppliers: (state) => state.suppliersList,
@@ -103,6 +108,19 @@ export default {
         getSuppliersByPage(state)
         {
             let s = state.suppliersList.map((element) => element);
+            
+            if(state.sorting == 1)
+            {
+                s.sort((a, b) => {
+                    return a.supplierName.localeCompare(b.supplierName);
+                });
+            } else if(state.sorting == 2)
+            {
+                s.sort((a, b) => {
+                    return b.supplierName.localeCompare(a.supplierName);
+                });
+            }
+
             return s.splice(state.itemsPerPage*state.page - state.itemsPerPage, state.itemsPerPage);
         },
         getModalState: (state) => state.modal,
