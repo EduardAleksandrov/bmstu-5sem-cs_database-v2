@@ -16,6 +16,8 @@ namespace DBase.Models
         [Required]
         [MaxLength(800)]
         public string? ProductName { get; set; }
+        [MaxLength(800)]
+        public string? Producer { get; set; }
         public decimal UnitPrice { get; set; }
         public int QuantityInStock { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
