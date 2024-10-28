@@ -150,7 +150,6 @@ export default {
                         return supplier_b.supplierName.localeCompare(supplier_a.supplierName);
                     }else if(state.sortingWarehouse == 1)
                     {
-                        
                         let warehouse_a = rootGetters['warehouses/allWarehouses'].find(s => s.iD_Warehouse === a.warehouseID);
                         let warehouse_b = rootGetters['warehouses/allWarehouses'].find(s => s.iD_Warehouse === b.warehouseID);
                         return warehouse_a.warehouseName.localeCompare(warehouse_b.warehouseName);
