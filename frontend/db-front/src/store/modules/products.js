@@ -89,18 +89,30 @@ export default {
         changeSort(state, payload)
         {
             state.sorting = payload;
+            state.sortingProducer = 0;
+            state.sortingSupplier = 0;
+            state.sortingWarehouse = 0;
         },
         changeSortProducer(state, payload)
         {
             state.sortingProducer = payload;
+            state.sorting = 0;
+            state.sortingSupplier = 0;
+            state.sortingWarehouse = 0;
         },
         changeSortSupplier(state, payload)
         {
             state.sortingSupplier = payload;
+            state.sorting = 0;
+            state.sortingProducer = 0;
+            state.sortingWarehouse = 0;
         },
         changeSortWarehouse(state, payload)
         {
             state.sortingWarehouse = payload;
+            state.sorting = 0;
+            state.sortingProducer = 0;
+            state.sortingSupplier = 0;
         },
         changePagination(state, payload)
         {

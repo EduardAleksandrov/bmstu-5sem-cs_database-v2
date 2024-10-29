@@ -67,28 +67,28 @@
             </select>
 
             Товар:
-            <select v-model="sort" id="options" class="styled-select-sort">
+            <select v-model="sort" id="options" @change="sort_f" class="styled-select-sort">
                 <option value="0"> По умолчанию </option>
                 <option value="1"> По возрастанию </option>
                 <option value="2"> По убыванию </option>
             </select>
             
             Поставщик:
-            <select v-model="sortSupplier" id="optionss" class="styled-select-sort">
+            <select v-model="sortSupplier" id="optionss" @change="sortSupplier_f" class="styled-select-sort">
                 <option value="0"> По умолчанию </option>
                 <option value="1"> По возрастанию </option>
                 <option value="2"> По убыванию </option>
             </select>
 
             Склад:
-            <select v-model="sortWarehouse" id="optionsss" class="styled-select-sort">
+            <select v-model="sortWarehouse" id="optionsss" @change="sortWarehouse_f" class="styled-select-sort">
                 <option value="0"> По умолчанию </option>
                 <option value="1"> По возрастанию </option>
                 <option value="2"> По убыванию </option>
             </select>
 
             Производитель:
-            <select v-model="sortProducer" id="optionssss" class="styled-select-sort">
+            <select v-model="sortProducer" id="optionssss" @change="sortProducer_f" class="styled-select-sort">
                 <option value="0"> По умолчанию </option>
                 <option value="1"> По возрастанию </option>
                 <option value="2"> По убыванию </option>
@@ -132,34 +132,6 @@ export default {
             }
     },
     watch: {
-        sort()
-        {
-            // this.sortProducer = 0;
-            // this.sortSupplier = 0;
-            // this.sortWarehouse = 0;
-            this.changeSort(this.sort);
-        },
-        sortProducer()
-        {
-            // this.sort = 0;
-            // this.sortSupplier = 0;
-            // this.sortWarehouse = 0;
-            this.changeSortProducer(this.sortProducer);
-        },
-        sortSupplier()
-        {
-            // this.sort = 0;
-            // this.sortProducer = 0;
-            // this.sortWarehouse = 0;
-            this.changeSortSupplier(this.sortSupplier);
-        },
-        sortWarehouse()
-        {
-            // this.sort = 0;
-            // this.sortProducer = 0;
-            // this.sortSupplier = 0;
-            this.changeSortWarehouse(this.sortWarehouse);
-        },
         pag()
         {
             this.changePagination(this.pag);
@@ -212,6 +184,34 @@ export default {
             if(this.page > this.getTotalPages) this.page = this.getTotalPages;
             this.setPage(this.page);
             // this.$router.push({ name: 'supplier', params: { id: this.page } });
+        },
+        sort_f()
+        {
+            this.sortProducer = 0;
+            this.sortSupplier = 0;
+            this.sortWarehouse = 0;
+            this.changeSort(this.sort);
+        },
+        sortSupplier_f()
+        {
+            this.sort = 0;
+            this.sortProducer = 0;
+            this.sortWarehouse = 0;
+            this.changeSortSupplier(this.sortSupplier);
+        },
+        sortWarehouse_f()
+        {
+            this.sort = 0;
+            this.sortProducer = 0;
+            this.sortSupplier = 0;
+            this.changeSortWarehouse(this.sortWarehouse);
+        },
+        sortProducer_f()
+        {
+            this.sort = 0;
+            this.sortSupplier = 0;
+            this.sortWarehouse = 0;
+            this.changeSortProducer(this.sortProducer);
         }
     },
     computed: {
