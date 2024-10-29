@@ -88,12 +88,12 @@ namespace DBase.Data
             Guid ID_Product6 = Guid.NewGuid();
 
             modelBuilder.Entity<Product>().HasData(
-                new Product { ID_Product = ID_Product1, SupplierID = ID_Supplier1, WarehouseID = ID_Warehouse1, ProductName = "Product 1", Producer = "Producer 1", UnitPrice = 10.00m, QuantityInStock = 100},
-                new Product { ID_Product = ID_Product2, SupplierID = ID_Supplier1, WarehouseID = ID_Warehouse1, ProductName = "Product 2", Producer = "Producer 2", UnitPrice = 15.00m, QuantityInStock = 200},
-                new Product { ID_Product = ID_Product3, SupplierID = ID_Supplier2, WarehouseID = ID_Warehouse2, ProductName = "Product 3", Producer = "Producer 2", UnitPrice = 20.00m, QuantityInStock = 150},
-                new Product { ID_Product = ID_Product4, SupplierID = ID_Supplier3, WarehouseID = ID_Warehouse3, ProductName = "Product 4", Producer = "Producer 2", UnitPrice = 25.00m, QuantityInStock = 80 },
-                new Product { ID_Product = ID_Product5, SupplierID = ID_Supplier3, WarehouseID = ID_Warehouse3, ProductName = "Product 5", Producer = "Producer 3", UnitPrice = 30.00m, QuantityInStock = 60 },
-                new Product { ID_Product = ID_Product6, SupplierID = ID_Supplier4, WarehouseID = ID_Warehouse4, ProductName = "Product 6", Producer = "Producer 3", UnitPrice = 35.00m, QuantityInStock = 40 }
+                new Product { ID_Product = ID_Product1, SupplierID = ID_Supplier1, WarehouseID = ID_Warehouse1, ProductName = "Product 1", Producer = "Producer 1", Cell = "a100", UnitPrice = 10.00m, QuantityInStock = 100},
+                new Product { ID_Product = ID_Product2, SupplierID = ID_Supplier1, WarehouseID = ID_Warehouse1, ProductName = "Product 2", Producer = "Producer 2", Cell = "a101", UnitPrice = 15.00m, QuantityInStock = 200},
+                new Product { ID_Product = ID_Product3, SupplierID = ID_Supplier2, WarehouseID = ID_Warehouse2, ProductName = "Product 3", Producer = "Producer 2", Cell = "a102", UnitPrice = 20.00m, QuantityInStock = 150},
+                new Product { ID_Product = ID_Product4, SupplierID = ID_Supplier3, WarehouseID = ID_Warehouse3, ProductName = "Product 4", Producer = "Producer 2", Cell = "a103", UnitPrice = 25.00m, QuantityInStock = 80 },
+                new Product { ID_Product = ID_Product5, SupplierID = ID_Supplier3, WarehouseID = ID_Warehouse3, ProductName = "Product 5", Producer = "Producer 3", Cell = "a104", UnitPrice = 30.00m, QuantityInStock = 60 },
+                new Product { ID_Product = ID_Product6, SupplierID = ID_Supplier4, WarehouseID = ID_Warehouse4, ProductName = "Product 6", Producer = "Producer 3", Cell = "a105", UnitPrice = 35.00m, QuantityInStock = 40 }
             );
 
             // Seed data for Customers
