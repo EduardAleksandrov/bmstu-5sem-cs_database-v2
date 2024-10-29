@@ -128,9 +128,11 @@ export default {
 
 .table-cell {
     max-width: 250px; /* Set your desired max width */
-    overflow: hidden; /* Hide overflow content */
-    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
-    white-space: nowrap; /* Prevent text from wrapping */
+    // overflow: hidden; /* Hide overflow content */
+    // text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+    // white-space: wrap; /* Prevent text from wrapping */
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
   
 </style>
