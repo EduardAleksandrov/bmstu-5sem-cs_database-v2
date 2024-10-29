@@ -60,6 +60,12 @@
         </div>
 
         <div class="styled-select-sort-div">
+            <select v-model="pag" id="pag" class="styled-select-sort pag_count">
+                <option value="2"> 2 </option>
+                <option value="5"> 5 </option>
+                <option value="10"> 10 </option>
+            </select>
+
             Товар:
             <select v-model="sort" id="options" class="styled-select-sort">
                 <option value="0"> По умолчанию </option>
@@ -122,36 +128,41 @@ export default {
             sortProducer: 0,
             sortSupplier: 0,
             sortWarehouse: 0,
+            pag: 2,
             }
     },
     watch: {
         sort()
         {
+            // this.sortProducer = 0;
+            // this.sortSupplier = 0;
+            // this.sortWarehouse = 0;
             this.changeSort(this.sort);
-            this.sortProducer = 0;
-            this.sortSupplier = 0;
-            this.sortWarehouse = 0;
         },
         sortProducer()
         {
+            // this.sort = 0;
+            // this.sortSupplier = 0;
+            // this.sortWarehouse = 0;
             this.changeSortProducer(this.sortProducer);
-            this.sort = 0;
-            this.sortSupplier = 0;
-            this.sortWarehouse = 0;
         },
         sortSupplier()
         {
+            // this.sort = 0;
+            // this.sortProducer = 0;
+            // this.sortWarehouse = 0;
             this.changeSortSupplier(this.sortSupplier);
-            this.sort = 0;
-            this.sortProducer = 0;
-            this.sortWarehouse = 0;
         },
         sortWarehouse()
         {
+            // this.sort = 0;
+            // this.sortProducer = 0;
+            // this.sortSupplier = 0;
             this.changeSortWarehouse(this.sortWarehouse);
-            this.sort = 0;
-            this.sortProducer = 0;
-            this.sortSupplier = 0;
+        },
+        pag()
+        {
+            this.changePagination(this.pag);
         }
     },
     mounted()
@@ -165,7 +176,7 @@ export default {
         ...mapActions('products', ['newProducts']),
         ...mapActions('suppliers', ['fetchSuppliers']),
         ...mapActions('warehouses', ['fetchWarehouses']),
-        ...mapMutations('products', ['setPage','changeSort','changeSortProducer','changeSortSupplier','changeSortWarehouse']), // Map mutations to methods
+        ...mapMutations('products', ['setPage','changeSort','changeSortProducer','changeSortSupplier','changeSortWarehouse','changePagination']), // Map mutations to methods
         addProduct()
         {
             if(this.newProduct.SupplierID != '' && 
@@ -356,5 +367,9 @@ input {
 
 .styled-select-sort option {
     padding: 10px; /* Padding for options */
+}
+
+.pag_count {
+    width: 5%;
 }
 </style>

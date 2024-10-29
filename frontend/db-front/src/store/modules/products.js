@@ -101,6 +101,10 @@ export default {
         changeSortWarehouse(state, payload)
         {
             state.sortingWarehouse = payload;
+        },
+        changePagination(state, payload)
+        {
+            state.itemsPerPage = payload;
         }
     },
     state: {
