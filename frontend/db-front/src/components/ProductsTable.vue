@@ -19,7 +19,7 @@
       </thead>
       <tbody >
         <tr class="table" v-for="el in getProductsByPage" :key="el.iD_Product">
-          <td>{{ el.productName }}</td>
+          <td class="table-cell">{{ el.productName }}</td>
           <td>{{ getSupplierById(el.supplierID) }}</td>
           <td>{{ getWarehouseById(el.warehouseID) }}</td>
           <td>{{ el.producer }}</td>
@@ -126,5 +126,11 @@ export default {
     background-color: #45a049; /* Цвет фона кнопки при наведении */
   }
 
+.table-cell {
+    max-width: 250px; /* Set your desired max width */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
   
 </style>
