@@ -22,6 +22,8 @@
                 <input name="productName" :class="['form__text', {'yellow-border': !titleYBorder}, {'red-border': titleRBorder}]" v-model="productName" autocomplete="off" />
                 <div class="form__text-title">Производитель</div>
                 <input name="producer" :class="['form__text', {'yellow-border': !authorYBorder}, {'red-border': authorRBorder}]" v-model="producer" autocomplete="off" />
+                <div class="form__text-title">Складская ячейка</div>
+                <input name="cell" :class="['form__text', {'yellow-border': !cellYBorder}, {'red-border': cellRBorder}]" v-model="cell" autocomplete="off" />
                 <div class="form__text-title">Цена за единицу</div>
                 <input name="unitPrice" :class="['form__text', {'yellow-border': !imgtypeYBorder}, {'red-border': imgtypeRBorder}]" v-model="unitPrice" autocomplete="off" />
                 <div class="form__text-title">Количество на складе</div>
@@ -48,6 +50,7 @@ export default {
             warehouseID: null,
             productName: null,
             producer: null,
+            cell: null,
             unitPrice: null,
             quantityInStock: null
         };
@@ -58,6 +61,7 @@ export default {
         this.warehouseID = this.getcurrentElementForModal.warehouseID,
         this.productName = this.getcurrentElementForModal.productName,
         this.producer = this.getcurrentElementForModal.producer,
+        this.cell = this.getcurrentElementForModal.cell,
         this.unitPrice = this.getcurrentElementForModal.unitPrice,
         this.quantityInStock = this.getcurrentElementForModal.quantityInStock
         
@@ -75,10 +79,11 @@ export default {
                 this.warehouseID === '' || 
                 this.productName === '' ||
                 this.producer === '' ||
+                this.cell === '' ||
                 this.unitPrice === 0 ||
                 this.quantityInStock === 0)
                 {
-                console.log(this.supplierID);
+                // console.log(this.supplierID);
                 return
             } else {
                 let obj = {
@@ -87,6 +92,7 @@ export default {
                     warehouseID: this.warehouseID,
                     productName: this.productName,
                     producer: this.producer,
+                    cell: this.cell,
                     unitPrice: this.unitPrice,
                     quantityInStock: this.quantityInStock
                 }
@@ -100,7 +106,7 @@ export default {
         ...mapGetters('suppliers', ['getSortSuppliers']),
         ...mapGetters('warehouses', ['getSortWarehouses']),
         emptyInputs() {
-            return this.productName === '' || this.producer === '' || this.unitPrice === 0 || this.quantityInStock === 0 || this.unitPrice === '' || this.quantityInStock === '';
+            return this.productName === '' || this.producer === '' || this.cell === '' || this.unitPrice === 0 || this.quantityInStock === 0 || this.unitPrice === '' || this.quantityInStock === '';
         },
         titleYBorder() {
             return this.getcurrentElementForModal.productName === this.productName;
@@ -128,6 +134,12 @@ export default {
         },
         supplierYBorder() {
             return this.getcurrentElementForModal.supplierID === this.supplierID;
+        },
+        cellYBorder() {
+            return this.getcurrentElementForModal.cell === this.cell;
+        },
+        cellRBorder() {
+            return this.cell === '';
         },
     }
 }

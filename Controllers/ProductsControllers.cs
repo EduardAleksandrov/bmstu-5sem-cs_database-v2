@@ -53,6 +53,7 @@ public class ProductsController : ControllerBase
             WarehouseID = prod.WarehouseID,
             ProductName = prod.ProductName,
             Producer = prod.Producer,
+            Cell = prod.Cell,
             UnitPrice = prod.UnitPrice,
             QuantityInStock = prod.QuantityInStock
         };
@@ -103,6 +104,7 @@ public class ProductsController : ControllerBase
         existingProduct.WarehouseID = product.WarehouseID;
         existingProduct.ProductName = product.ProductName;
         existingProduct.Producer = product.Producer;
+        existingProduct.Cell = product.Cell;
         existingProduct.UnitPrice = product.UnitPrice;
         existingProduct.QuantityInStock = product.QuantityInStock;
         

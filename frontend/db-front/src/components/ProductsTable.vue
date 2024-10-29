@@ -10,6 +10,7 @@
           <th>Поставщик</th>
           <th>Склад</th>
           <th>Производитель</th>
+          <th>Складская ячейка</th>
           <th>Цена за единицу</th>
           <th>Количество на складе</th>
           <th>Action</th>
@@ -22,6 +23,7 @@
           <td>{{ getSupplierById(el.supplierID) }}</td>
           <td>{{ getWarehouseById(el.warehouseID) }}</td>
           <td>{{ el.producer }}</td>
+          <td>{{ el.cell }}</td>
           <td>{{ el.unitPrice }}</td>
           <td>{{ el.quantityInStock }}</td>
           <td>

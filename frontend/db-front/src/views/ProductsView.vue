@@ -9,6 +9,7 @@
                     <th>Склад</th>
                     <th>Название товара</th>
                     <th>Производитель</th>
+                    <th>Складская Ячейка</th>
                     <th>Цена за единицу</th>
                     <th>Количество на складе</th>
                     </tr>
@@ -34,19 +35,23 @@
                         </select>
                     </td>
                     <td>                
-                        <input :class="[{'red-border': titleRBorderThree}]"
+                        <input :class="[{'red-border': titleRBorderOne}]"
                         v-model="newProduct.ProductName" placeholder="Введите название" />
                     </td>
                     <td>                
-                        <input :class="[{'red-border': titleRBorderFour}]"
+                        <input :class="[{'red-border': titleRBorderTwo}]"
                         v-model="newProduct.Producer" placeholder="Введите производителя" />
+                    </td>
+                     <td>                
+                        <input :class="[{'red-border': titleRBorderThree}]"
+                        v-model="newProduct.Cell" placeholder="Введите складскую ячейку" />
                     </td>
                     <td>                
                         <input :class="[{'red-border': titleRBorderFour}]"
                         v-model="newProduct.UnitPrice" placeholder="Введите цену" />
                     </td>
                     <td>                
-                        <input :class="[{'red-border': titleRBorderFour}]"
+                        <input :class="[{'red-border': titleRBorderFive}]"
                         v-model="newProduct.QuantityInStock" placeholder="Введите количество" />
                     </td>
                     </tr>
@@ -111,7 +116,7 @@ export default {
     },
     data() {
         return {
-            newProduct: {SupplierID: "", WarehouseID: "", ProductName: "", Producer: "", UnitPrice: 0, QuantityInStock: 0},
+            newProduct: {SupplierID: "", WarehouseID: "", ProductName: "", Producer: "", Cell: "", UnitPrice: 0, QuantityInStock: 0},
             page: 1,
             sort: 0,
             sortProducer: 0,
@@ -167,6 +172,7 @@ export default {
                 this.newProduct.WarehouseID != '' && 
                 this.newProduct.ProductName != '' && 
                 this.newProduct.Producer != '' && 
+                this.newProduct.Cell != '' && 
                 this.newProduct.UnitPrice != 0 && 
                 this.newProduct.QuantityInStock != 0)
             {
@@ -175,6 +181,7 @@ export default {
                 this.newProduct.WarehouseID = '';
                 this.newProduct.ProductName = '';
                 this.newProduct.Producer = '';
+                this.newProduct.Cell = '';
                 this.newProduct.UnitPrice = 0;
                 this.newProduct.QuantityInStock = 0;
             } else {
@@ -207,9 +214,12 @@ export default {
             return this.newProduct.Producer === ''
         },
         titleRBorderThree() {
-            return this.newProduct.UnitPrice === 0
+            return this.newProduct.Cell === ''
         },
         titleRBorderFour() {
+            return this.newProduct.UnitPrice === 0
+        },
+        titleRBorderFive() {
             return this.newProduct.QuantityInStock === 0
         },
         showProductsModal() {
