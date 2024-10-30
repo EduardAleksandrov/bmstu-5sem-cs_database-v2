@@ -61,6 +61,14 @@ export default {
             } else {
                 console.log('Supplier not found');
             }
+        },
+        searchEmailMut(state, payload)
+        {
+            state.searchEmail = payload;
+        },
+        searchAllCustomers(state, payload)
+        {
+            state.searchAllCustomersM = payload;
         }
     },
     state: {
@@ -70,14 +78,38 @@ export default {
         modal: false, //показывать модалку
         orderDetailsModal: false,
         currentElementForModal:{},
+        searchEmail:'',
+        searchAllCustomersM:[]
     },
     getters: {
         allOrderlists: (state) => state.OrderlistList,
         getTotalPages: (state) => Math.ceil(state.OrderlistList.length / state.itemsPerPage),
         getPage: (state) => state.page,
-        getOrderlistsByPage(state)
+        getOrderlistsByPage(state, rootGetters)
         {
             let s = state.OrderlistList.map((element) => element);
+
+            let allCustomers = state.searchAllCustomersM;
+            if(state.searchEmail != '')
+            {
+                // Проверяем, что allCustomers существует и является массивом
+                if (Array.isArray(allCustomers)) {
+                    // Фильтруем клиентов по email
+                    allCustomers = allCustomers.filter(user => 
+                        user.email.toLowerCase().includes(state.searchEmail.toLowerCase())
+                    );
+
+                    // Если есть отфильтрованные клиенты, ищем соответствующие элементы в s
+                    if (allCustomers.length > 0) {
+                        s = s.filter(order => 
+                            allCustomers.some(customer => customer.iD_Customer === order.customerID)
+                        );
+                    }
+                } else {
+                    console.error('allCustomers is undefined or not an array');
+                }
+            }
+
             return s.splice(state.itemsPerPage*state.page - state.itemsPerPage, state.itemsPerPage);
         },
         getModalState: (state) => state.modal,

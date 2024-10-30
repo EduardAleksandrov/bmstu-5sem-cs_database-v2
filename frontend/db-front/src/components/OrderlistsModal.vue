@@ -17,7 +17,6 @@
                     <button class="form__text-submit" @click="saveChanges">Сохранить</button>
                     <button class="form__text-clear" @click="closeModal">Закрыть форму</button>
                 </div>
-                <div class="form__attention" v-if="emptyInputs">Поля не могут быть пустыми</div>
             </div>
         </div>
     </div>

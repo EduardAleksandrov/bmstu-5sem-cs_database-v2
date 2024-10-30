@@ -1,6 +1,11 @@
 <template>
     <div class="home">
 
+        <div class="inputs__wrapper">
+            <p>Поиск: </p>
+            <input class="inputs__search"
+            v-model="searchEmail" placeholder="Введите email" />
+        </div>
         <OrderlistsTable />
         
         <div class="pagination-container">
@@ -32,7 +37,15 @@ export default {
     data() {
         return {
             page: 1,
+            searchEmail: ''
             }
+    },
+    watch: {
+        searchEmail()
+        {
+            this.searchEmailMut(this.searchEmail);
+            this.searchAllCustomers(this.allCustomers);
+        }
     },
     mounted()
     {
@@ -42,7 +55,7 @@ export default {
     methods: {
         ...mapActions('customers', ['fetchCustomers']),
         ...mapActions('products', ['fetchProducts']),
-        ...mapMutations('orderlists', ['setPage']), // Map mutations to methods
+        ...mapMutations('orderlists', ['setPage','searchEmailMut', 'searchAllCustomers']), // Map mutations to methods
         moveBack()
         {
             this.page--;
@@ -58,6 +71,8 @@ export default {
     },
     computed: {
         ...mapGetters('orderlists', ['getTotalPages', 'getPage','getModalState', 'getModalOrderDetailsState']),
+        ...mapGetters('customers', ['allCustomers']),
+
         showOrderlistsModal() {
             return this.getModalState;
         },
@@ -143,5 +158,21 @@ input {
 }
 .right{
     margin-left: 20px;
+}
+
+.inputs__wrapper {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: flex-start; /* Align items to the left */
+    margin-bottom: 10px;
+    align-items: center;
+}
+.inputs__search {
+    width:20%;
+    padding: 10px; /* Padding for better spacing */
+    border: 2px solid #cccccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    font-size: 16px;
+    margin-left:15px;
 }
 </style>
