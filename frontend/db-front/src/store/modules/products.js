@@ -182,5 +182,6 @@ export default {
         },
         getModalState: (state) => state.modal,
         getcurrentElementForModal: (state) => state.currentElementForModal,
+        getitemsPerPage: (state) => state.itemsPerPage,
     }
 }

@@ -60,7 +60,7 @@
         </div>
 
         <div class="styled-select-sort-div">
-            <select v-model="pag" id="pag" class="styled-select-sort pag_count">
+            <select v-model="pag" id="pag" @change="pag_f" class="styled-select-sort pag_count">
                 <option value="2"> 2 </option>
                 <option value="5"> 5 </option>
                 <option value="10"> 10 </option>
@@ -132,10 +132,6 @@ export default {
             }
     },
     watch: {
-        pag()
-        {
-            this.changePagination(this.pag);
-        }
     },
     mounted()
     {
@@ -143,6 +139,7 @@ export default {
         this.setPage(this.page);
         this.fetchSuppliers();
         this.fetchWarehouses();
+        this.pag = this.getitemsPerPage
     },
     methods: {
         ...mapActions('products', ['newProducts']),
@@ -212,10 +209,14 @@ export default {
             this.sortSupplier = 0;
             this.sortWarehouse = 0;
             this.changeSortProducer(this.sortProducer);
+        },
+        pag_f()
+        {
+            this.changePagination(this.pag);
         }
     },
     computed: {
-        ...mapGetters('products', ['getTotalPages', 'getPage','getModalState']),
+        ...mapGetters('products', ['getTotalPages', 'getPage','getModalState','getitemsPerPage']),
         ...mapGetters('suppliers', ['getSortSuppliers']),
         ...mapGetters('warehouses', ['getSortWarehouses']),
         titleRBorderOne() {

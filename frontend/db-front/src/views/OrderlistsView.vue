@@ -175,4 +175,8 @@ input {
     font-size: 16px;
     margin-left:15px;
 }
+.inputs__search:focus{
+    border-color: #19a53c; /* Light gray border */
+    outline: none;
+}
 </style>
