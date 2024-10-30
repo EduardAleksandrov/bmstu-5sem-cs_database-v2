@@ -3,6 +3,7 @@ import suppliers from './modules/suppliers'
 import warehouses from './modules/warehouses'
 import customers from './modules/customers'
 import products from './modules/products'
+import orderlists from './modules/orderlists'
 
 export default createStore({
   state: {
@@ -18,5 +19,6 @@ export default createStore({
     warehouses: warehouses,
     customers: customers,
     products: products,
+    orderlists: orderlists,
   }
 })

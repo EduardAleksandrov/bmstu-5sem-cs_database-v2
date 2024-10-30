@@ -6,6 +6,7 @@
       <router-link to="/warehouses">Склады</router-link> |
       <router-link to="/customers">Покупатели</router-link> |
       <router-link to="/products">Товары</router-link> |
+      <router-link to="/orderlists">Заказы</router-link>
     </nav>
     <router-view/>
   </div>
