@@ -10,6 +10,8 @@
         </div>
 
         <OrderlistsModal v-if="showOrderlistsModal" class="modal"/>
+        <OrderlistsdetailsModal v-if="showOrderlistsdetailsModal" class="modal"/>
+        
     </div>
 </template>
 
@@ -17,13 +19,15 @@
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 import OrderlistsTable from '@/components/OrderlistsTable.vue'
 import OrderlistsModal from '@/components/OrderlistsModal.vue';
+import OrderlistsdetailsModal from '@/components/OrderlistsdetailsModal.vue';
 
 
 export default {
     name: 'OrderlistsView',
     components: {
         OrderlistsTable,
-        OrderlistsModal
+        OrderlistsModal,
+        OrderlistsdetailsModal
     },
     data() {
         return {
@@ -33,9 +37,11 @@ export default {
     mounted()
     {
         this.fetchCustomers();
+        this.fetchProducts();
     },
     methods: {
         ...mapActions('customers', ['fetchCustomers']),
+        ...mapActions('products', ['fetchProducts']),
         ...mapMutations('orderlists', ['setPage']), // Map mutations to methods
         moveBack()
         {
@@ -51,9 +57,13 @@ export default {
         }
     },
     computed: {
-        ...mapGetters('orderlists', ['getTotalPages', 'getPage','getModalState']),
+        ...mapGetters('orderlists', ['getTotalPages', 'getPage','getModalState', 'getModalOrderDetailsState']),
         showOrderlistsModal() {
             return this.getModalState;
+        },
+        showOrderlistsdetailsModal()
+        {
+            return this.getModalOrderDetailsState;
         }
     }
     

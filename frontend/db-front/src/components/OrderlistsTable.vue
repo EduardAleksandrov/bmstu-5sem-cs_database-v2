@@ -43,7 +43,7 @@ export default {
     name: 'OrderlistsTable',
     methods: {
       ...mapActions('orderlists', ['fetchOrderlists',]),
-      ...mapMutations('orderlists', ['showModal','setCurrentEl']),
+      ...mapMutations('orderlists', ['showModal','setCurrentEl','showOrderDetailsModal']),
       changeOrd(el)
       {
         // console.log(el);
@@ -52,7 +52,8 @@ export default {
       },
       showOrd(el)
       {
-
+        this.setCurrentEl(el);
+        this.showOrderDetailsModal(true);
       },
       getCustomerNameById(id)
       {

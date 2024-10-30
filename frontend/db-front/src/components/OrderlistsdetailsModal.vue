@@ -6,12 +6,22 @@
                     Форма
                 </h1>
                 <br>
-                <div class="form__text-title">Статус</div>
-                <select v-model="status" id="options" :class="['styled-select', {'yellow-border': !orderlistsYBorder}]">
-                    <option v-for="option in st" :key="option" :value="option">
-                        {{ option }}
-                    </option>
-                </select>                
+                <table>
+                    <thead>
+                        <tr class="table">
+                        <th>Товар</th>
+                        <th>Количество</th>
+                        <th>Цена за единицу</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr class="table" v-for="el in getcurrentElementForModal.orderDetails" :key="el.id">
+                        <td class="table-cell">{{ getProductNameById(el.productId) }}</td>
+                        <td>{{ el.quantity }}</td>
+                        <td>{{ el.unitPrice }}</td>
+                        </tr>
+                    </tbody>
+                    </table>
                 
                 <div style="margin-bottom: 20px;">
                     <button class="form__text-submit" @click="saveChanges">Сохранить</button>
@@ -26,56 +36,39 @@
 <script>
 import { mapGetters, mapState, mapMutations, mapActions } from 'vuex';
 export default {
-    name: 'OrderlistsModal',
+    name: 'OrderdetailsModal',
     data() {
         return {
-            iD_Order: null,
-            customerID: null,
-            totalAmount: null,
-            orderDate: null,
-            status: null,
-            orderDetails: null,
-            st: [
-                'Opened',
-                'Completed',
-                'Shipped',
-                'Pending',
-                'Closed'
-            ]
         };
     },
     mounted() {
-        this.iD_Order = this.getcurrentElementForModal.iD_Order;
-        this.customerID = this.getcurrentElementForModal.customerID;
-        this.totalAmount = this.getcurrentElementForModal.totalAmount;
-        this.orderDate = this.getcurrentElementForModal.orderDate;
-        this.status = this.getcurrentElementForModal.status;
-        this.orderDetails = this.getcurrentElementForModal.orderDetails;
     },
     watch: {
     },  
     methods: {
-        ...mapMutations('orderlists', ['showModal']),
-        ...mapActions('orderlists', ['updateOrderlist']),
+        ...mapMutations('orderlists', ['showOrderDetailsModal']),
         closeModal() {
-            this.showModal(false);
+            this.showOrderDetailsModal(false);
         },
         saveChanges() 
         {
-            let obj = {
-                iD_Order: this.iD_Order,
-                customerID: this.customerID,
-                totalAmount: this.totalAmount,
-                orderDate: this.orderDate,
-                status: this.status,
-                orderDetails: this.orderDetails,
+            this.showOrderDetailsModal(false);
+        },
+        getProductNameById(id)
+        {
+            // console.log(id);
+            let product = this.allProducts.find(s => s.iD_Product === id);
+            if (product) {
+                return product.productName; // Return the supplier name if found
+            } else {
+                console.log("Product not found");
+                return ""; // Return an empty string or a default value if not found
             }
-            this.updateOrderlist(obj);
-            this.showModal(false);
-        }
+        },
     },
     computed: {
         ...mapGetters('orderlists', ['getcurrentElementForModal']),
+        ...mapGetters('products', ['allProducts']),
         orderlistsYBorder() {
             return this.getcurrentElementForModal.status === this.status;
         },
@@ -95,7 +88,7 @@ export default {
         padding: 40px 50px;
         z-index: 12;
 
-        min-width: 500px;
+        min-width: 1000px;
         min-height: 400px;
         //border: 2px solid rgb(136, 136, 136);
         border-radius: 10px;
@@ -124,23 +117,6 @@ export default {
     &__text-title {
         margin-bottom: 4px;
     }
-
-    // &__text-desc {
-    //     width: 93%;
-    //     height: 80px;
-    //     margin-bottom: 40px;
-    //     border: 1px solid rgb(185, 185, 185);
-    //     border-radius: 4px;
-    //     padding: 5px 10px;
-
-    //     //margin-right: 80px;
-
-    //     outline: none;
-    //     &:focus {
-    //         border: none;
-    //         border-bottom: 3px solid rgb(207, 235, 50);
-    //     }
-    // }
 
     &__text-clear {
         border: 1px solid rgb(255, 251, 0);
@@ -205,5 +181,35 @@ export default {
 
 .styled-select option {
     padding: 10px; /* Padding for options */
+}
+
+
+table {
+  width: 100%; /* Занимает всю ширину окна */
+  margin-bottom: 100px;
+  border-collapse: collapse; /* Убирает двойные границы между ячейками */
+  }
+
+  th, td {
+    border: 1px solid #ddd; /* Граница ячеек */
+    padding: 8px; /* Отступы внутри ячеек */
+    text-align: left; /* Выравнивание текста по левому краю */
+  }
+
+  th {
+    background-color: #f2f2f2; /* Цвет фона заголовков */
+  }
+
+  tr:hover {
+    background-color: #f5f5f5; /* Цвет фона строки при наведении */
+  }
+
+  .table-cell {
+    max-width: 250px; /* Set your desired max width */
+    // overflow: hidden; /* Hide overflow content */
+    // text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+    // white-space: wrap; /* Prevent text from wrapping */
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 </style>

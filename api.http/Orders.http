@@ -6,17 +6,17 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "CustomerID": "3d6dc92a-6a71-48d0-a09e-811f1a7133de",
+    "CustomerID": "079803a8-edfd-480f-8727-a9f68a0695b7",
     "OrderDetails": [
         {
-            "ProductId": "01444e9a-ba89-46c1-9ba4-37cc7413695c",
+            "ProductId": "18344cc7-03b8-4a3a-8aee-6f2cd6fb2156",
             "Quantity": 2,
-            "UnitPrice": 10.00
+            "UnitPrice": 35.00
         },
         {
-            "ProductId": "01444e9a-ba89-46c1-9ba4-37cc7413695c",
+            "ProductId": "225cb8bf-0d64-4e14-a3c5-9bf0aabf19c8",
             "Quantity": 1,
-            "UnitPrice": 15.00
+            "UnitPrice": 25.00
         }
     ]
 }

@@ -44,6 +44,9 @@ export default {
         showModal(state, payload) {
             state.modal = payload;
         },
+        showOrderDetailsModal(state, payload) {
+            state.orderDetailsModal = payload;
+        },
         setCurrentEl(state, payload)
         {
             state.currentElementForModal = payload;
@@ -62,9 +65,10 @@ export default {
     },
     state: {
         OrderlistList: [],
-        itemsPerPage: 2,
+        itemsPerPage: 5,
         page: 1,
         modal: false, //показывать модалку
+        orderDetailsModal: false,
         currentElementForModal:{},
     },
     getters: {
@@ -77,6 +81,7 @@ export default {
             return s.splice(state.itemsPerPage*state.page - state.itemsPerPage, state.itemsPerPage);
         },
         getModalState: (state) => state.modal,
+        getModalOrderDetailsState: (state) => state.orderDetailsModal,
         getcurrentElementForModal: (state) => state.currentElementForModal,
     }
 }
