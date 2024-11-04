@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/warehouse_logo.png">
-    <HelloWorld msg="Warehouse Order Management Software"/>
+    <HelloWorld msg="Warehouse Product Management Software"/>
   </div>
 </template>
 
