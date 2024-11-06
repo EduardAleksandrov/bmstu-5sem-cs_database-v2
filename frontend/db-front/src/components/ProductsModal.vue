@@ -7,13 +7,13 @@
                 </h1>
                 <br>
                 <div class="form__text-title">Поставщик</div>
-                <select v-model="supplierID" id="options" :class="['styled-select', {'yellow-border': !supplierYBorder}]">
+                <select v-model="supplierID" id="options" :class="['styled-select', {'yellow-border': !supplierYBorder}]" size=2>
                     <option v-for="option in getSortSuppliers" :key="option.iD_Supplier" :value="option.iD_Supplier">
                         {{ option.supplierName }}
                     </option>
                 </select>                
                 <div class="form__text-title">Склад</div>
-                <select v-model="warehouseID" id="options" class="styled-select">
+                <select v-model="warehouseID" id="options" class="styled-select" size=2>
                     <option v-for="option in getSortWarehouses" :key="option.iD_Warehouse" :value="option.iD_Warehouse">
                         {{ option.warehouseName }}
                     </option>
@@ -266,5 +266,9 @@ export default {
 
 .styled-select option {
     padding: 10px; /* Padding for options */
+}
+
+.styled-select option:checked {
+    background-color: #beeeb1; /* Padding for options */
 }
 </style>

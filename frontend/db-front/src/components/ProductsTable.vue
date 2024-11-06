@@ -20,7 +20,7 @@
       <tbody >
         <tr class="table" v-for="el in getProductsByPage" :key="el.iD_Product">
           <td class="table-cell">{{ el.productName }}</td>
-          <td>{{ getSupplierById(el.supplierID) }}</td>
+          <td class="table-cell">{{ getSupplierById(el.supplierID) }}</td>
           <td>{{ getWarehouseById(el.warehouseID) }}</td>
           <td>{{ el.producer }}</td>
           <td>{{ el.cell }}</td>

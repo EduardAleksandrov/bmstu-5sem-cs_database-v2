@@ -16,7 +16,7 @@
       </thead>
       <tbody >
         <tr class="table" v-for="el in getSuppliersByPage" :key="el.id">
-          <td>{{ el.supplierName }}</td>
+          <td class="table-cell">{{ el.supplierName }}</td>
           <td>{{ el.contactName }}</td>
           <td>{{ el.email }}</td>
           <td>{{ el.phone }}</td>
@@ -95,5 +95,9 @@ export default {
     background-color: #45a049; /* Цвет фона кнопки при наведении */
   }
 
-  
+  .table-cell {
+    max-width: 250px; /* Set your desired max width */
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
 </style>

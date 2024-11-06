@@ -16,8 +16,8 @@
                 </thead>
                 <tbody >
                     <tr class="table">
-                    <td>
-                        <select v-model="newProduct.SupplierID" id="options" class="styled-select">
+                    <td class="table-cell">
+                        <select v-model="newProduct.SupplierID" id="options" class="styled-select" size=2>
                             <option  value="">
                             </option>
                             <option v-for="option in getSortSuppliers" :key="option.iD_Supplier" :value="option.iD_Supplier">
@@ -25,8 +25,8 @@
                             </option>
                         </select>
                     </td>
-                    <td>
-                        <select v-model="newProduct.WarehouseID" id="options" class="styled-select">
+                    <td class="table-cell">
+                        <select v-model="newProduct.WarehouseID" id="options" class="styled-select" size=2>
                             <option  value="">
                             </option>
                             <option v-for="option in getSortWarehouses" :key="option.iD_Warehouse" :value="option.iD_Warehouse">
@@ -337,6 +337,17 @@ input {
 
 .styled-select option {
     padding: 10px; /* Padding for options */
+}
+
+.styled-select option:checked {
+    background-color: #beeeb1; /* Padding for options */
+}
+
+.table-cell {
+    max-width: 250px; /* Set your desired max width */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+    // white-space: wrap; /* Prevent text from wrapping */
 }
 
 
