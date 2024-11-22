@@ -3,13 +3,19 @@ WHERE "ID_OrderDetails" ='ace4944a-405c-4831-8eef-2427a51be5da';
 
 
 -- 1 запрос
-SELECT "SupplierName", "Email", "UnitPrice", "QuantityInStock", "WarehouseName"
+SELECT "SupplierName", "Email", "UnitPrice", "QuantityInStock", "WarehouseName",
+	CASE
+        WHEN "UnitPrice" BETWEEN 500 and 1000 THEN 'Категория A'
+        WHEN "UnitPrice" BETWEEN 1000 AND 4000 THEN 'Категория B'
+        WHEN "UnitPrice" > 4000 THEN 'Категория C'
+        ELSE 'Категория Zero'
+    END AS "Category"
 FROM "Products" p
 INNER JOIN 
 	"Suppliers" s ON p."SupplierID" = s."ID_Supplier"
 INNER JOIN 
 	"Warehouses" w ON p."WarehouseID" = w."ID_Warehouse"
-WHERE "UnitPrice" > 1000 AND "QuantityInStock" > 100
+WHERE "UnitPrice" > 500 AND "QuantityInStock" > 80
 ORDER BY "UnitPrice" ASC
 
 
