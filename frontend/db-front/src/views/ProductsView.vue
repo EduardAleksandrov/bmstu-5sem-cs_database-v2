@@ -128,7 +128,7 @@ export default {
             sortProducer: 0,
             sortSupplier: 0,
             sortWarehouse: 0,
-            pag: 2,
+            pag: 10,
             }
     },
     watch: {

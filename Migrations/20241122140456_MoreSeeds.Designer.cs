@@ -3,6 +3,7 @@ using System;
 using DBase.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241122140456_MoreSeeds")]
+    partial class MoreSeeds
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -61,7 +64,7 @@ namespace API.Migrations
                     b.HasData(
                         new
                         {
-                            ID_Customer = new Guid("de6dae74-ca42-4ef6-95c6-e4f2ccd69f5d"),
+                            ID_Customer = new Guid("9968614d-c178-4d2d-948f-00d3372b7557"),
                             Address = "123 Main St, Anytown, USA",
                             Auto = 0,
                             CustomerName = "John Doe",
@@ -70,7 +73,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("24b4742d-16fe-4952-a520-0b4a331475a7"),
+                            ID_Customer = new Guid("3b3ef280-6b8a-40e0-b0f4-6f0242a28e56"),
                             Address = "456 Elm St, Othertown, USA",
                             Auto = 0,
                             CustomerName = "Jane Smith",
@@ -79,7 +82,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("441cc2ae-b2d9-49d0-b630-9f468cacbb62"),
+                            ID_Customer = new Guid("91527ea6-09c5-4459-9084-444843fd99f3"),
                             Address = "789 Pine St, Sometown, USA",
                             Auto = 0,
                             CustomerName = "Alice Johnson",
@@ -88,7 +91,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("5c1a41ae-6d6e-46ab-bd82-49169506aa2c"),
+                            ID_Customer = new Guid("db64165e-c9c5-4902-95d4-2bdfae7e6a9e"),
                             Address = "321 Oak St, Anothertown, USA",
                             Auto = 0,
                             CustomerName = "Bob Brown",
@@ -97,7 +100,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("d3b8b9f7-0ac0-4598-a29e-469e4cb68723"),
+                            ID_Customer = new Guid("7fe5c280-66aa-441f-9d60-8c63a9c38889"),
                             Address = "135 Maple St, Newtown, USA",
                             Auto = 0,
                             CustomerName = "Charlie Davis",
@@ -106,7 +109,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("f49847e4-eb96-4f97-aea4-ce7935686e36"),
+                            ID_Customer = new Guid("55fafe62-99d7-4f37-9978-be4d1ed93056"),
                             Address = "246 Cedar St, Oldtown, USA",
                             Auto = 0,
                             CustomerName = "Diana Prince",
@@ -115,7 +118,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("992fc6e3-aff7-4fae-be1d-1e8a092964fd"),
+                            ID_Customer = new Guid("7f76aca1-32ea-4c94-b039-fd4e1af0cfcc"),
                             Address = "357 Birch St, Yourtown, USA",
                             Auto = 0,
                             CustomerName = "Ethan Hunt",
@@ -124,7 +127,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("fa28d787-7b98-4edc-a94f-bd2b05d43eb7"),
+                            ID_Customer = new Guid("c73a201d-d6fa-4647-a899-66a212ebec48"),
                             Address = "468 Spruce St, Hometown, USA",
                             Auto = 0,
                             CustomerName = "Fiona Green",
@@ -133,7 +136,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("16e1a3bf-cd29-4fcd-a8ca-9e08fcd3db6e"),
+                            ID_Customer = new Guid("ce280b61-edc2-4b48-ad0d-c4aece68967e"),
                             Address = "579 Fir St, Thistown, USA",
                             Auto = 0,
                             CustomerName = "George White",
@@ -142,7 +145,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("181fc13a-5e8b-4933-b052-c69fd8b6b0dc"),
+                            ID_Customer = new Guid("c3279e8a-949a-41ba-80b7-915d431edcb6"),
                             Address = "680 Willow St, Thatown, USA",
                             Auto = 0,
                             CustomerName = "Hannah Blue",
@@ -151,7 +154,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("c177b56c-5a97-4e82-960e-596ffc85bcfa"),
+                            ID_Customer = new Guid("70b4da1e-7b0c-4fa9-81bb-212f2784d32c"),
                             Address = "791 Ash St, Anycity, USA",
                             Auto = 0,
                             CustomerName = "Ian Gray",
@@ -160,7 +163,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("0ec25c74-e709-455d-8c24-bf5c8a0ffd0e"),
+                            ID_Customer = new Guid("78be7ef6-b1bd-4983-a74d-e8d6df827c95"),
                             Address = "802 Cherry St, Somecity, USA",
                             Auto = 0,
                             CustomerName = "Julia Red",
@@ -169,7 +172,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("957c7645-fb90-4fdd-b3e9-3d32efa33798"),
+                            ID_Customer = new Guid("c44cdd70-aab1-4609-bf89-d3adb04f04e5"),
                             Address = "913 Peach St, Othercity, USA",
                             Auto = 0,
                             CustomerName = "Kevin Black",
@@ -178,7 +181,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("2bbd6bc5-0639-428e-ae18-35f49e7dd7d2"),
+                            ID_Customer = new Guid("77fa4da5-d422-4df1-9ba2-9fad50a15522"),
                             Address = "024 Plum St, Newcity, USA",
                             Auto = 0,
                             CustomerName = "Laura Pink",
@@ -187,7 +190,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("8dd656c7-8401-4228-999e-ea543409b517"),
+                            ID_Customer = new Guid("e40966e7-be50-4271-9ca7-bc0c462fd562"),
                             Address = "135 Lemon St, Oldcity, USA",
                             Auto = 0,
                             CustomerName = "Mike Yellow",
@@ -196,7 +199,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("c1cba954-41e5-439b-ad83-06a60a52201c"),
+                            ID_Customer = new Guid("7df36448-61d5-4691-b5df-7d85497b5c2b"),
                             Address = "246 Lime St, Yourcity, USA",
                             Auto = 0,
                             CustomerName = "Nina Cyan",
@@ -205,7 +208,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("15de8c1e-7568-437b-94cb-bee7037ee15b"),
+                            ID_Customer = new Guid("4fe91387-85a8-49b8-b1d3-658d202ce9b0"),
                             Address = "357 Grape St, Thatcity, USA",
                             Auto = 0,
                             CustomerName = "Oscar Magenta",
@@ -214,7 +217,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("7baab2a4-2f40-4601-8902-8cfae2cb1b89"),
+                            ID_Customer = new Guid("1bff5891-57fa-428f-99e2-3536d3510c76"),
                             Address = "468 Berry St, Thiscity, USA",
                             Auto = 0,
                             CustomerName = "Paula Teal",
@@ -223,7 +226,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("2e61adc7-7fdf-4e90-8bcd-e0982f3b232e"),
+                            ID_Customer = new Guid("a4be202c-5dcf-47a3-9b10-a01a17895efc"),
                             Address = "579 Fig St, Anycity, USA",
                             Auto = 0,
                             CustomerName = "Quinn Brown",
@@ -232,7 +235,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("c19393fd-d964-4245-b6f0-4544c6ef892c"),
+                            ID_Customer = new Guid("c59ae328-7ab8-4eaf-9093-be0581921dff"),
                             Address = "680 Date St, Somecity, USA",
                             Auto = 0,
                             CustomerName = "Rachel Silver",
@@ -241,7 +244,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("d1505e24-7ae2-4585-b700-5aab163eb192"),
+                            ID_Customer = new Guid("a22af5cd-77d4-4e16-8c69-25109af63219"),
                             Address = "791 Olive St, Othercity, USA",
                             Auto = 0,
                             CustomerName = "Steve Gold",
@@ -250,7 +253,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("08c02564-5018-43ca-a685-8e7697a9ef0c"),
+                            ID_Customer = new Guid("ce0d2f02-0212-4938-853e-af303be593da"),
                             Address = "802 Walnut St, Newcity, USA",
                             Auto = 0,
                             CustomerName = "Tina Copper",
@@ -259,7 +262,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("eea28bf0-eb7a-412c-b2b7-3789576198b7"),
+                            ID_Customer = new Guid("a67b611d-5283-457b-862b-a1c202e07885"),
                             Address = "913 Chestnut St, Oldcity, USA",
                             Auto = 0,
                             CustomerName = "Ursula Bronze",
@@ -268,7 +271,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("d5b13830-820f-4ce9-8833-4055edf045bb"),
+                            ID_Customer = new Guid("f7c19f58-f85a-4d26-9433-bf1d720e00b7"),
                             Address = "024 Maple St, Yourcity, USA",
                             Auto = 0,
                             CustomerName = "Victor Steel",
@@ -277,7 +280,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("60654cb0-e74a-401e-8675-6f1fd832f1c2"),
+                            ID_Customer = new Guid("92d95be7-a2c2-4bd5-aca5-6f1cc13d2829"),
                             Address = "135 Pineapple St, Thatcity, USA",
                             Auto = 0,
                             CustomerName = "Wendy Iron",
@@ -286,7 +289,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("334e649c-8c4c-4a70-94ca-4d458588ecd9"),
+                            ID_Customer = new Guid("ca6fbe44-afce-43ee-8fdf-a0e873fd6e75"),
                             Address = "246 Coconut St, Thiscity, USA",
                             Auto = 0,
                             CustomerName = "Xander Zinc",
@@ -295,7 +298,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("d75dab49-a7bc-4b3b-b70a-8e75ddf0f11a"),
+                            ID_Customer = new Guid("9088e531-a9e2-4d12-885e-1fab1a3ef4a9"),
                             Address = "357 Papaya St, Anycity, USA",
                             Auto = 0,
                             CustomerName = "Yvonne Nickel",
@@ -304,7 +307,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("7d9dac09-0063-4c7b-861e-b6451040f7cc"),
+                            ID_Customer = new Guid("d6111caa-3080-40aa-a929-59f4543a2c6c"),
                             Address = "680 Kiwi St, Somecity, USA",
                             Auto = 0,
                             CustomerName = "Zachary Lead",
@@ -313,7 +316,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("3eae8071-f7ec-4c8b-bff0-43d5d2980a85"),
+                            ID_Customer = new Guid("e49fb541-fcb1-4efc-a1eb-bd4781340fcf"),
                             Address = "791 Mango St, Othercity, USA",
                             Auto = 0,
                             CustomerName = "Alice Cooper",
@@ -322,7 +325,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Customer = new Guid("815ca9bd-442b-420c-b55e-7e9dcf9df7f3"),
+                            ID_Customer = new Guid("000560d5-8ca4-4139-bd4f-332113b252ea"),
                             Address = "802 Banana St, Newcity, USA",
                             Auto = 0,
                             CustomerName = "Bob Marley",
@@ -365,127 +368,127 @@ namespace API.Migrations
                     b.HasData(
                         new
                         {
-                            ID_Order = new Guid("30eb9510-3f26-486c-aa13-b6262fb69b0e"),
+                            ID_Order = new Guid("b24b920d-d5a7-4775-b27d-3df293c626d3"),
                             Auto = 0,
-                            CustomerID = new Guid("de6dae74-ca42-4ef6-95c6-e4f2ccd69f5d"),
-                            OrderDate = new DateTime(2024, 11, 22, 14, 19, 4, 903, DateTimeKind.Utc).AddTicks(3466),
+                            CustomerID = new Guid("9968614d-c178-4d2d-948f-00d3372b7557"),
+                            OrderDate = new DateTime(2024, 11, 22, 14, 4, 55, 699, DateTimeKind.Utc).AddTicks(196),
                             Status = "Completed",
                             TotalAmount = 35.00m
                         },
                         new
                         {
-                            ID_Order = new Guid("be28d647-c9ea-4cd1-a365-ebd6b9b9b6d2"),
+                            ID_Order = new Guid("97ec1e5f-8749-4222-9ea5-32b6149417b0"),
                             Auto = 0,
-                            CustomerID = new Guid("24b4742d-16fe-4952-a520-0b4a331475a7"),
-                            OrderDate = new DateTime(2024, 11, 22, 14, 19, 4, 903, DateTimeKind.Utc).AddTicks(3472),
+                            CustomerID = new Guid("3b3ef280-6b8a-40e0-b0f4-6f0242a28e56"),
+                            OrderDate = new DateTime(2024, 11, 22, 14, 4, 55, 699, DateTimeKind.Utc).AddTicks(203),
                             Status = "Pending",
                             TotalAmount = 20.00m
                         },
                         new
                         {
-                            ID_Order = new Guid("7318025b-fe5d-4a25-a9f3-afef7d83ebe2"),
+                            ID_Order = new Guid("0fe8b904-2a93-4382-8586-cf0b6f889cfd"),
                             Auto = 0,
-                            CustomerID = new Guid("441cc2ae-b2d9-49d0-b630-9f468cacbb62"),
-                            OrderDate = new DateTime(2024, 11, 22, 14, 19, 4, 903, DateTimeKind.Utc).AddTicks(3476),
+                            CustomerID = new Guid("91527ea6-09c5-4459-9084-444843fd99f3"),
+                            OrderDate = new DateTime(2024, 11, 22, 14, 4, 55, 699, DateTimeKind.Utc).AddTicks(209),
                             Status = "Completed",
                             TotalAmount = 80.00m
                         },
                         new
                         {
-                            ID_Order = new Guid("39cb2674-bfc0-4ab3-9da1-f822388ffa9c"),
+                            ID_Order = new Guid("ad90ee49-6232-4d23-893a-c7156a77cf5d"),
                             Auto = 0,
-                            CustomerID = new Guid("5c1a41ae-6d6e-46ab-bd82-49169506aa2c"),
-                            OrderDate = new DateTime(2024, 11, 22, 14, 19, 4, 903, DateTimeKind.Utc).AddTicks(3480),
+                            CustomerID = new Guid("db64165e-c9c5-4902-95d4-2bdfae7e6a9e"),
+                            OrderDate = new DateTime(2024, 11, 22, 14, 4, 55, 699, DateTimeKind.Utc).AddTicks(215),
                             Status = "Shipped",
                             TotalAmount = 70.00m
                         },
                         new
                         {
-                            ID_Order = new Guid("a84ef213-d5d1-4b88-9598-ab1d50945976"),
+                            ID_Order = new Guid("c6e7ec3b-46ad-405e-a991-a02ca6a8e4ba"),
                             Auto = 0,
-                            CustomerID = new Guid("d3b8b9f7-0ac0-4598-a29e-469e4cb68723"),
-                            OrderDate = new DateTime(2024, 11, 22, 14, 19, 4, 903, DateTimeKind.Utc).AddTicks(3484),
+                            CustomerID = new Guid("7fe5c280-66aa-441f-9d60-8c63a9c38889"),
+                            OrderDate = new DateTime(2024, 11, 22, 14, 4, 55, 699, DateTimeKind.Utc).AddTicks(222),
                             Status = "Completed",
                             TotalAmount = 300.50m
                         },
                         new
                         {
-                            ID_Order = new Guid("90327cc8-0605-40b0-91bf-f17b25a09e52"),
+                            ID_Order = new Guid("86de8a5e-5aac-4055-87d0-c987a492b78d"),
                             Auto = 0,
-                            CustomerID = new Guid("f49847e4-eb96-4f97-aea4-ce7935686e36"),
-                            OrderDate = new DateTime(2024, 11, 22, 14, 19, 4, 903, DateTimeKind.Utc).AddTicks(3488),
+                            CustomerID = new Guid("55fafe62-99d7-4f37-9978-be4d1ed93056"),
+                            OrderDate = new DateTime(2024, 11, 22, 14, 4, 55, 699, DateTimeKind.Utc).AddTicks(227),
                             Status = "Pending",
                             TotalAmount = 300.50m
                         },
                         new
                         {
-                            ID_Order = new Guid("b0cf6fad-e3e0-4153-99ce-bd960b348da4"),
+                            ID_Order = new Guid("4247b966-c5e1-437d-9ca8-de358f8214b0"),
                             Auto = 0,
-                            CustomerID = new Guid("992fc6e3-aff7-4fae-be1d-1e8a092964fd"),
-                            OrderDate = new DateTime(2024, 11, 22, 14, 19, 4, 903, DateTimeKind.Utc).AddTicks(3492),
+                            CustomerID = new Guid("7f76aca1-32ea-4c94-b039-fd4e1af0cfcc"),
+                            OrderDate = new DateTime(2024, 11, 22, 14, 4, 55, 699, DateTimeKind.Utc).AddTicks(233),
                             Status = "Shipped",
                             TotalAmount = 6000.50m
                         },
                         new
                         {
-                            ID_Order = new Guid("4c959a69-5354-4b3a-aae2-859a840c3b58"),
+                            ID_Order = new Guid("6a4616a6-6776-4633-b811-26fc5372b568"),
                             Auto = 0,
-                            CustomerID = new Guid("fa28d787-7b98-4edc-a94f-bd2b05d43eb7"),
-                            OrderDate = new DateTime(2024, 11, 22, 14, 19, 4, 903, DateTimeKind.Utc).AddTicks(3496),
+                            CustomerID = new Guid("c73a201d-d6fa-4647-a899-66a212ebec48"),
+                            OrderDate = new DateTime(2024, 11, 22, 14, 4, 55, 699, DateTimeKind.Utc).AddTicks(239),
                             Status = "Completed",
                             TotalAmount = 5001.30m
                         },
                         new
                         {
-                            ID_Order = new Guid("81f2b9d2-eba5-43ec-8b18-5075eda47d88"),
+                            ID_Order = new Guid("5395a48c-db13-45eb-996f-081a02914be8"),
                             Auto = 0,
-                            CustomerID = new Guid("16e1a3bf-cd29-4fcd-a8ca-9e08fcd3db6e"),
-                            OrderDate = new DateTime(2024, 11, 22, 14, 19, 4, 903, DateTimeKind.Utc).AddTicks(3500),
+                            CustomerID = new Guid("ce280b61-edc2-4b48-ad0d-c4aece68967e"),
+                            OrderDate = new DateTime(2024, 11, 22, 14, 4, 55, 699, DateTimeKind.Utc).AddTicks(245),
                             Status = "Pending",
-                            TotalAmount = 11000.20m
+                            TotalAmount = 1100.20m
                         },
                         new
                         {
-                            ID_Order = new Guid("c761f43b-088d-4efe-b211-f31e6c42a173"),
+                            ID_Order = new Guid("d32a5232-c659-486c-bd9a-9284a768c923"),
                             Auto = 0,
-                            CustomerID = new Guid("181fc13a-5e8b-4933-b052-c69fd8b6b0dc"),
-                            OrderDate = new DateTime(2024, 11, 22, 14, 19, 4, 903, DateTimeKind.Utc).AddTicks(3504),
+                            CustomerID = new Guid("c3279e8a-949a-41ba-80b7-915d431edcb6"),
+                            OrderDate = new DateTime(2024, 11, 22, 14, 4, 55, 699, DateTimeKind.Utc).AddTicks(250),
                             Status = "Completed",
                             TotalAmount = 3500.00m
                         },
                         new
                         {
-                            ID_Order = new Guid("db67442d-f2de-44ba-b41b-a7712cc27320"),
+                            ID_Order = new Guid("1bf16c75-1a5d-4c23-a0df-87e723493599"),
                             Auto = 0,
-                            CustomerID = new Guid("c177b56c-5a97-4e82-960e-596ffc85bcfa"),
-                            OrderDate = new DateTime(2024, 11, 22, 14, 19, 4, 903, DateTimeKind.Utc).AddTicks(3507),
+                            CustomerID = new Guid("70b4da1e-7b0c-4fa9-81bb-212f2784d32c"),
+                            OrderDate = new DateTime(2024, 11, 22, 14, 4, 55, 699, DateTimeKind.Utc).AddTicks(255),
                             Status = "Pending",
                             TotalAmount = 800.00m
                         },
                         new
                         {
-                            ID_Order = new Guid("c8643637-5b69-4af0-9a6d-3429d236d1df"),
+                            ID_Order = new Guid("d1e44f99-3d8e-4e38-b2b0-be5e71151431"),
                             Auto = 0,
-                            CustomerID = new Guid("0ec25c74-e709-455d-8c24-bf5c8a0ffd0e"),
-                            OrderDate = new DateTime(2024, 11, 22, 14, 19, 4, 903, DateTimeKind.Utc).AddTicks(3511),
+                            CustomerID = new Guid("78be7ef6-b1bd-4983-a74d-e8d6df827c95"),
+                            OrderDate = new DateTime(2024, 11, 22, 14, 4, 55, 699, DateTimeKind.Utc).AddTicks(261),
                             Status = "Shipped",
                             TotalAmount = 1400.20m
                         },
                         new
                         {
-                            ID_Order = new Guid("beec2dad-3809-4f16-84aa-bae57627bfa9"),
+                            ID_Order = new Guid("7fabd021-404b-458a-9e50-aa8e3add31f6"),
                             Auto = 0,
-                            CustomerID = new Guid("957c7645-fb90-4fdd-b3e9-3d32efa33798"),
-                            OrderDate = new DateTime(2024, 11, 22, 14, 19, 4, 903, DateTimeKind.Utc).AddTicks(3515),
+                            CustomerID = new Guid("c44cdd70-aab1-4609-bf89-d3adb04f04e5"),
+                            OrderDate = new DateTime(2024, 11, 22, 14, 4, 55, 699, DateTimeKind.Utc).AddTicks(266),
                             Status = "Completed",
                             TotalAmount = 3201.00m
                         },
                         new
                         {
-                            ID_Order = new Guid("874b6bd8-6437-45f1-ad27-af40ee1e9221"),
+                            ID_Order = new Guid("78ab56cb-4c81-4cd8-9418-8a53e5219cfc"),
                             Auto = 0,
-                            CustomerID = new Guid("2bbd6bc5-0639-428e-ae18-35f49e7dd7d2"),
-                            OrderDate = new DateTime(2024, 11, 22, 14, 19, 4, 903, DateTimeKind.Utc).AddTicks(3519),
+                            CustomerID = new Guid("77fa4da5-d422-4df1-9ba2-9fad50a15522"),
+                            OrderDate = new DateTime(2024, 11, 22, 14, 4, 55, 699, DateTimeKind.Utc).AddTicks(272),
                             Status = "Pending",
                             TotalAmount = 6300.80m
                         });
@@ -526,235 +529,235 @@ namespace API.Migrations
                     b.HasData(
                         new
                         {
-                            ID_OrderDetails = new Guid("65fc9065-546d-4aea-84b1-84e6a0f574a7"),
+                            ID_OrderDetails = new Guid("1b272d79-4c1e-4bce-ada6-5594ddb1c112"),
                             Auto = 0,
-                            OrderId = new Guid("30eb9510-3f26-486c-aa13-b6262fb69b0e"),
-                            ProductId = new Guid("ecabd6cd-c907-4f61-8659-308721950e03"),
+                            OrderId = new Guid("b24b920d-d5a7-4775-b27d-3df293c626d3"),
+                            ProductId = new Guid("5b433591-26b1-4ae9-8922-118a1156a635"),
                             Quantity = 2,
                             UnitPrice = 10.00m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("e9cee9ad-a39a-45af-a3c9-e781753ef2e2"),
+                            ID_OrderDetails = new Guid("1737176d-fe85-4074-b5ef-fbe64fedf6e8"),
                             Auto = 0,
-                            OrderId = new Guid("30eb9510-3f26-486c-aa13-b6262fb69b0e"),
-                            ProductId = new Guid("c1b7e3dd-46ee-49ac-879e-5cb15ebe4480"),
+                            OrderId = new Guid("b24b920d-d5a7-4775-b27d-3df293c626d3"),
+                            ProductId = new Guid("28367500-eb25-4f02-882f-c90c64af5ec6"),
                             Quantity = 1,
                             UnitPrice = 15.00m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("ac7aa424-79e2-4929-8f96-e00e51b0b2f1"),
+                            ID_OrderDetails = new Guid("200c167d-d9a6-40eb-b820-8509d65161d8"),
                             Auto = 0,
-                            OrderId = new Guid("be28d647-c9ea-4cd1-a365-ebd6b9b9b6d2"),
-                            ProductId = new Guid("9570aacc-51ed-45c3-b79f-ecfbc4352cb0"),
+                            OrderId = new Guid("97ec1e5f-8749-4222-9ea5-32b6149417b0"),
+                            ProductId = new Guid("a6794630-264d-4da1-a35d-651c4ee0f00d"),
                             Quantity = 1,
                             UnitPrice = 20.00m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("3dfcc6fa-d8c1-42f7-8917-4a559702ebf9"),
+                            ID_OrderDetails = new Guid("f54dfe74-bad7-4151-9e2d-b329811dfed8"),
                             Auto = 0,
-                            OrderId = new Guid("7318025b-fe5d-4a25-a9f3-afef7d83ebe2"),
-                            ProductId = new Guid("386cb7d0-c604-47d5-9ad7-22dcc22510d2"),
+                            OrderId = new Guid("0fe8b904-2a93-4382-8586-cf0b6f889cfd"),
+                            ProductId = new Guid("88ef40aa-9911-4916-9130-1c9f07175c9a"),
                             Quantity = 2,
                             UnitPrice = 25.00m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("75bd291d-23c7-49bb-ae2e-9ef8f7cce691"),
+                            ID_OrderDetails = new Guid("9192827e-ac17-4779-91a6-3d5241c2ef1f"),
                             Auto = 0,
-                            OrderId = new Guid("7318025b-fe5d-4a25-a9f3-afef7d83ebe2"),
-                            ProductId = new Guid("5920611e-362f-428c-a273-6e1085c795ff"),
+                            OrderId = new Guid("0fe8b904-2a93-4382-8586-cf0b6f889cfd"),
+                            ProductId = new Guid("3d463c1e-f535-417d-b478-a720d306ed01"),
                             Quantity = 1,
                             UnitPrice = 30.00m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("9741fbd5-6886-49f5-b94f-c79cdc24fe03"),
+                            ID_OrderDetails = new Guid("97be6a03-5f45-4bb0-8940-fafbd7150263"),
                             Auto = 0,
-                            OrderId = new Guid("39cb2674-bfc0-4ab3-9da1-f822388ffa9c"),
-                            ProductId = new Guid("eb5e5f1f-730d-4876-9106-a0a341faa2ad"),
+                            OrderId = new Guid("ad90ee49-6232-4d23-893a-c7156a77cf5d"),
+                            ProductId = new Guid("11f2b8bb-f6ec-4a61-a1f5-ad0c7eb9ce85"),
                             Quantity = 2,
                             UnitPrice = 35.00m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("7bca3d48-0a0a-4ff2-bb3d-72ab848bca6e"),
+                            ID_OrderDetails = new Guid("6609766b-0f15-4a38-889e-1ba03f405a11"),
                             Auto = 0,
-                            OrderId = new Guid("a84ef213-d5d1-4b88-9598-ab1d50945976"),
-                            ProductId = new Guid("52c220ad-b160-47c8-99ce-c6bcf0d3d0a1"),
+                            OrderId = new Guid("c6e7ec3b-46ad-405e-a991-a02ca6a8e4ba"),
+                            ProductId = new Guid("d9a5f831-e4fe-42c6-bbfa-d21fca5741dd"),
                             Quantity = 1,
                             UnitPrice = 100.50m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("cfbc7a1d-c8b9-4ce6-91bf-1217150eb690"),
+                            ID_OrderDetails = new Guid("c42ae8f3-f999-46e6-803a-10b5ffdc5636"),
                             Auto = 0,
-                            OrderId = new Guid("a84ef213-d5d1-4b88-9598-ab1d50945976"),
-                            ProductId = new Guid("6ce0a939-fe14-4d26-bebc-c77ad67ca5c5"),
+                            OrderId = new Guid("c6e7ec3b-46ad-405e-a991-a02ca6a8e4ba"),
+                            ProductId = new Guid("c5d44187-c0f1-414e-95d1-a0d4ef427dcc"),
                             Quantity = 1,
                             UnitPrice = 200.00m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("f34be459-2b5b-4c30-8027-458fabc52917"),
+                            ID_OrderDetails = new Guid("e3e3ad0e-d043-4601-8d48-ef4196951a8b"),
                             Auto = 0,
-                            OrderId = new Guid("90327cc8-0605-40b0-91bf-f17b25a09e52"),
-                            ProductId = new Guid("0dc583e3-2692-4b21-87f6-eee8cab6e458"),
+                            OrderId = new Guid("86de8a5e-5aac-4055-87d0-c987a492b78d"),
+                            ProductId = new Guid("0e1efc12-6035-4d18-8ead-a1b9203dd841"),
                             Quantity = 1,
                             UnitPrice = 300.50m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("5bc93166-3e7b-4b32-94a0-ad588efcbce3"),
+                            ID_OrderDetails = new Guid("022ce0ca-e5c1-4234-847d-c8a39e2c93d1"),
                             Auto = 0,
-                            OrderId = new Guid("b0cf6fad-e3e0-4153-99ce-bd960b348da4"),
-                            ProductId = new Guid("6082b477-c64c-4b5e-8b64-7e84c499ea98"),
+                            OrderId = new Guid("4247b966-c5e1-437d-9ca8-de358f8214b0"),
+                            ProductId = new Guid("aaaac5d2-8576-48e9-b348-2aedca1650f5"),
                             Quantity = 1,
                             UnitPrice = 4000.00m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("5e7881ac-07e1-4728-80fb-8c95c66d5f8e"),
+                            ID_OrderDetails = new Guid("2b74da7a-beff-4542-9c80-2cc5d5993b53"),
                             Auto = 0,
-                            OrderId = new Guid("b0cf6fad-e3e0-4153-99ce-bd960b348da4"),
-                            ProductId = new Guid("a31a169b-5c58-4d4d-afc9-1578ef17de0e"),
+                            OrderId = new Guid("4247b966-c5e1-437d-9ca8-de358f8214b0"),
+                            ProductId = new Guid("01e9c78b-d3ca-4133-a72c-55ba67085521"),
                             Quantity = 1,
                             UnitPrice = 2000.50m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("90a066ca-fe11-4a2c-b415-f34052ac47c1"),
+                            ID_OrderDetails = new Guid("1d1b9000-70a6-49fe-b8ad-91a0086bdd47"),
                             Auto = 0,
-                            OrderId = new Guid("4c959a69-5354-4b3a-aae2-859a840c3b58"),
-                            ProductId = new Guid("a4713f2f-2cdf-44e1-afc0-200ba0b9bfd1"),
+                            OrderId = new Guid("6a4616a6-6776-4633-b811-26fc5372b568"),
+                            ProductId = new Guid("729ec85d-fa0d-477b-8005-8899c4599a41"),
                             Quantity = 1,
                             UnitPrice = 1000.80m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("50b5c1af-237f-4cd5-aa4c-1f9e2b3ae053"),
+                            ID_OrderDetails = new Guid("1776dc33-5602-4ce2-ba94-e9cb5de5e9d5"),
                             Auto = 0,
-                            OrderId = new Guid("4c959a69-5354-4b3a-aae2-859a840c3b58"),
-                            ProductId = new Guid("a70a1dd7-102d-4afb-adab-e0673aeddaaa"),
+                            OrderId = new Guid("6a4616a6-6776-4633-b811-26fc5372b568"),
+                            ProductId = new Guid("446eb2d5-9ab6-401a-bb5a-380465afca6d"),
                             Quantity = 1,
                             UnitPrice = 4000.50m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("20fee1be-9bf0-45f1-b013-7fda500ae5f5"),
+                            ID_OrderDetails = new Guid("a5e49eec-e167-4347-bbd5-ec6db894fd3d"),
                             Auto = 0,
-                            OrderId = new Guid("81f2b9d2-eba5-43ec-8b18-5075eda47d88"),
-                            ProductId = new Guid("1d126102-f297-4f5e-a387-432d117a178f"),
+                            OrderId = new Guid("5395a48c-db13-45eb-996f-081a02914be8"),
+                            ProductId = new Guid("3f4810d0-2338-460d-9f80-f3c39699af53"),
                             Quantity = 1,
                             UnitPrice = 6000.00m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("ad1868b5-52ac-452a-be51-3187d2a85f42"),
+                            ID_OrderDetails = new Guid("666ed0c4-651f-4b19-a04a-75b2da4416ac"),
                             Auto = 0,
-                            OrderId = new Guid("81f2b9d2-eba5-43ec-8b18-5075eda47d88"),
-                            ProductId = new Guid("646fbdce-e801-4f2f-91c7-c196362f6b7b"),
+                            OrderId = new Guid("5395a48c-db13-45eb-996f-081a02914be8"),
+                            ProductId = new Guid("9f1c1f9b-87f2-4f6e-a0af-b3228c7c4d15"),
                             Quantity = 1,
                             UnitPrice = 3000.00m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("4eeaa75c-2b41-405c-a5d4-13f954a64c46"),
+                            ID_OrderDetails = new Guid("6848c3bd-21ca-4be2-8d7c-2890399b127c"),
                             Auto = 0,
-                            OrderId = new Guid("81f2b9d2-eba5-43ec-8b18-5075eda47d88"),
-                            ProductId = new Guid("73d7c52f-176b-49ed-89ff-ad6f07521687"),
+                            OrderId = new Guid("5395a48c-db13-45eb-996f-081a02914be8"),
+                            ProductId = new Guid("f924bda0-f643-4b8f-88e8-5272e4f044de"),
                             Quantity = 1,
                             UnitPrice = 2000.20m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("d49a2309-f4ae-48c0-894d-4438b7577d8f"),
+                            ID_OrderDetails = new Guid("837877f6-9d48-41c4-a35d-5d62faebe422"),
                             Auto = 0,
-                            OrderId = new Guid("c761f43b-088d-4efe-b211-f31e6c42a173"),
-                            ProductId = new Guid("f69e4b89-6144-4c54-880d-9ea214d764b1"),
+                            OrderId = new Guid("d32a5232-c659-486c-bd9a-9284a768c923"),
+                            ProductId = new Guid("189d7451-0786-461c-8fba-7705e8e33ac6"),
                             Quantity = 1,
                             UnitPrice = 3000.00m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("d45aedb8-c0e6-48b8-b835-a1839e272047"),
+                            ID_OrderDetails = new Guid("fd205d81-28ab-4ffc-a607-b5960164c926"),
                             Auto = 0,
-                            OrderId = new Guid("c761f43b-088d-4efe-b211-f31e6c42a173"),
-                            ProductId = new Guid("4270c1f7-6610-4e54-8e79-5016ac00e18a"),
+                            OrderId = new Guid("d32a5232-c659-486c-bd9a-9284a768c923"),
+                            ProductId = new Guid("5aad2270-ff2f-43e3-b655-2b819d1b3471"),
                             Quantity = 1,
                             UnitPrice = 500.00m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("f3c0cb21-f38a-4daa-bd3f-bd0b35925aad"),
+                            ID_OrderDetails = new Guid("a7e65e60-2fd2-4a81-8760-0a1362f007c8"),
                             Auto = 0,
-                            OrderId = new Guid("db67442d-f2de-44ba-b41b-a7712cc27320"),
-                            ProductId = new Guid("d4ef38f1-cbf4-47ee-a7ae-72ca3d030159"),
+                            OrderId = new Guid("1bf16c75-1a5d-4c23-a0df-87e723493599"),
+                            ProductId = new Guid("83572000-5201-4653-bc78-7a4b483a50f4"),
                             Quantity = 1,
                             UnitPrice = 800.00m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("92dc4106-f5a8-4d0e-a6a5-41f735f892ea"),
+                            ID_OrderDetails = new Guid("33be799f-5c9b-4ea3-93a3-35fb52fdfbc9"),
                             Auto = 0,
-                            OrderId = new Guid("c8643637-5b69-4af0-9a6d-3429d236d1df"),
-                            ProductId = new Guid("45f64507-75a8-41d9-b178-f6c0be3ae039"),
+                            OrderId = new Guid("d1e44f99-3d8e-4e38-b2b0-be5e71151431"),
+                            ProductId = new Guid("12383e39-59ec-4c76-b5df-d74e455b379a"),
                             Quantity = 1,
                             UnitPrice = 1000.20m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("39eff660-b936-4f47-91fb-2871744cbbcc"),
+                            ID_OrderDetails = new Guid("65676a57-4edb-4e5f-9290-12599dfd62fa"),
                             Auto = 0,
-                            OrderId = new Guid("c8643637-5b69-4af0-9a6d-3429d236d1df"),
-                            ProductId = new Guid("02c58195-8d04-4106-987b-6205e2bd582d"),
+                            OrderId = new Guid("d1e44f99-3d8e-4e38-b2b0-be5e71151431"),
+                            ProductId = new Guid("bbf39327-3ebe-4ca3-9789-d334c45c4654"),
                             Quantity = 1,
                             UnitPrice = 400.00m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("d1b41f40-748d-4e8d-bace-312a87cf816a"),
+                            ID_OrderDetails = new Guid("d027667a-dd9b-46e1-af4a-d7e18afc143e"),
                             Auto = 0,
-                            OrderId = new Guid("beec2dad-3809-4f16-84aa-bae57627bfa9"),
-                            ProductId = new Guid("22712885-e0cd-40b6-ac06-db6cf07f7e59"),
+                            OrderId = new Guid("7fabd021-404b-458a-9e50-aa8e3add31f6"),
+                            ProductId = new Guid("8b300791-586f-4061-bef6-6d6b88e12240"),
                             Quantity = 1,
                             UnitPrice = 3000.50m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("cd989b02-e514-408c-8d89-c380121ff2dd"),
+                            ID_OrderDetails = new Guid("89b02f07-0cc4-4db8-b7eb-fc43e7b6d15d"),
                             Auto = 0,
-                            OrderId = new Guid("beec2dad-3809-4f16-84aa-bae57627bfa9"),
-                            ProductId = new Guid("9b4ddf17-05e4-4d09-9ffa-1a1783deff38"),
+                            OrderId = new Guid("7fabd021-404b-458a-9e50-aa8e3add31f6"),
+                            ProductId = new Guid("4485e0fa-8f90-4348-8676-2769eb6ba5e8"),
                             Quantity = 1,
                             UnitPrice = 200.50m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("f2ff20bf-606a-4e09-b078-52c85c1faee2"),
+                            ID_OrderDetails = new Guid("e997f342-5d97-4526-b232-d8d26bc8c4f7"),
                             Auto = 0,
-                            OrderId = new Guid("874b6bd8-6437-45f1-ad27-af40ee1e9221"),
-                            ProductId = new Guid("c449035c-eb8c-4c9c-9777-6d709d5514c9"),
+                            OrderId = new Guid("78ab56cb-4c81-4cd8-9418-8a53e5219cfc"),
+                            ProductId = new Guid("d2b8687a-070a-4817-96e3-365bebb693c4"),
                             Quantity = 1,
                             UnitPrice = 100.80m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("640904f7-f688-4643-a71c-541339eec669"),
+                            ID_OrderDetails = new Guid("bd5212d7-f0f6-4d94-8d65-a1c76beb0407"),
                             Auto = 0,
-                            OrderId = new Guid("874b6bd8-6437-45f1-ad27-af40ee1e9221"),
-                            ProductId = new Guid("ddaafc36-f7c7-438f-bedc-e754b148da68"),
+                            OrderId = new Guid("78ab56cb-4c81-4cd8-9418-8a53e5219cfc"),
+                            ProductId = new Guid("c2685135-2196-483b-b6f9-c397b56b4870"),
                             Quantity = 1,
                             UnitPrice = 200.00m
                         },
                         new
                         {
-                            ID_OrderDetails = new Guid("bf3acefc-8c06-41a4-9346-11b2cf898b79"),
+                            ID_OrderDetails = new Guid("51444ade-1717-4f68-8e1b-5a227f01de7a"),
                             Auto = 0,
-                            OrderId = new Guid("874b6bd8-6437-45f1-ad27-af40ee1e9221"),
-                            ProductId = new Guid("b7a50599-43ee-4205-975f-cd8d282dc3ec"),
+                            OrderId = new Guid("78ab56cb-4c81-4cd8-9418-8a53e5219cfc"),
+                            ProductId = new Guid("cd435b50-146c-4b35-8aaa-df60255589b8"),
                             Quantity = 1,
                             UnitPrice = 6000.00m
                         });
@@ -808,483 +811,483 @@ namespace API.Migrations
                     b.HasData(
                         new
                         {
-                            ID_Product = new Guid("ecabd6cd-c907-4f61-8659-308721950e03"),
+                            ID_Product = new Guid("5b433591-26b1-4ae9-8922-118a1156a635"),
                             Auto = 0,
                             Cell = "a100",
                             Producer = "Producer 1",
                             ProductName = "Product 1",
                             QuantityInStock = 100,
-                            SupplierID = new Guid("5636731c-722c-4c85-9d6f-452f4904a50d"),
+                            SupplierID = new Guid("9c6a8113-ba44-4b94-bebf-31aacb96a183"),
                             UnitPrice = 10.00m,
-                            WarehouseID = new Guid("18424185-38c4-494d-99a1-9243c270528c")
+                            WarehouseID = new Guid("e4a36000-c5c6-4836-999b-57b3a5f5ce6c")
                         },
                         new
                         {
-                            ID_Product = new Guid("c1b7e3dd-46ee-49ac-879e-5cb15ebe4480"),
+                            ID_Product = new Guid("28367500-eb25-4f02-882f-c90c64af5ec6"),
                             Auto = 0,
                             Cell = "a101",
                             Producer = "Producer 2",
                             ProductName = "Product 2",
                             QuantityInStock = 200,
-                            SupplierID = new Guid("5636731c-722c-4c85-9d6f-452f4904a50d"),
+                            SupplierID = new Guid("9c6a8113-ba44-4b94-bebf-31aacb96a183"),
                             UnitPrice = 15.00m,
-                            WarehouseID = new Guid("18424185-38c4-494d-99a1-9243c270528c")
+                            WarehouseID = new Guid("e4a36000-c5c6-4836-999b-57b3a5f5ce6c")
                         },
                         new
                         {
-                            ID_Product = new Guid("9570aacc-51ed-45c3-b79f-ecfbc4352cb0"),
+                            ID_Product = new Guid("a6794630-264d-4da1-a35d-651c4ee0f00d"),
                             Auto = 0,
                             Cell = "a102",
                             Producer = "Producer 2",
                             ProductName = "Product 3",
                             QuantityInStock = 150,
-                            SupplierID = new Guid("2b7e4611-7977-409c-9872-73aad4cbddab"),
+                            SupplierID = new Guid("13af075e-a923-42fc-a866-6b0cfe6b79d6"),
                             UnitPrice = 20.00m,
-                            WarehouseID = new Guid("0bb9f8e0-0500-40e8-88f8-62b1d6b4b451")
+                            WarehouseID = new Guid("ac73118a-f69f-423a-aa64-f4b01dfdcafc")
                         },
                         new
                         {
-                            ID_Product = new Guid("386cb7d0-c604-47d5-9ad7-22dcc22510d2"),
+                            ID_Product = new Guid("88ef40aa-9911-4916-9130-1c9f07175c9a"),
                             Auto = 0,
                             Cell = "a103",
                             Producer = "Producer 2",
                             ProductName = "Product 4",
                             QuantityInStock = 80,
-                            SupplierID = new Guid("49283e03-ec1f-4eb1-977c-a96fe799c63d"),
+                            SupplierID = new Guid("eb180958-e017-4e60-8e78-df8f361c9bf6"),
                             UnitPrice = 25.00m,
-                            WarehouseID = new Guid("f458867f-fb75-423a-910c-893bb4d79c9f")
+                            WarehouseID = new Guid("c447c363-4528-437c-ae09-41d9304e6594")
                         },
                         new
                         {
-                            ID_Product = new Guid("5920611e-362f-428c-a273-6e1085c795ff"),
+                            ID_Product = new Guid("3d463c1e-f535-417d-b478-a720d306ed01"),
                             Auto = 0,
                             Cell = "a104",
                             Producer = "Producer 3",
                             ProductName = "Product 5",
                             QuantityInStock = 60,
-                            SupplierID = new Guid("49283e03-ec1f-4eb1-977c-a96fe799c63d"),
+                            SupplierID = new Guid("eb180958-e017-4e60-8e78-df8f361c9bf6"),
                             UnitPrice = 30.00m,
-                            WarehouseID = new Guid("f458867f-fb75-423a-910c-893bb4d79c9f")
+                            WarehouseID = new Guid("c447c363-4528-437c-ae09-41d9304e6594")
                         },
                         new
                         {
-                            ID_Product = new Guid("eb5e5f1f-730d-4876-9106-a0a341faa2ad"),
+                            ID_Product = new Guid("11f2b8bb-f6ec-4a61-a1f5-ad0c7eb9ce85"),
                             Auto = 0,
                             Cell = "a105",
                             Producer = "Producer 3",
                             ProductName = "Product 6",
                             QuantityInStock = 40,
-                            SupplierID = new Guid("b4e43cb3-97e2-4e95-9945-7fe0efb90dfc"),
+                            SupplierID = new Guid("9ecd1896-b951-40f8-b13d-91a4b1bf09f3"),
                             UnitPrice = 35.00m,
-                            WarehouseID = new Guid("f6df8f8f-9eb0-4332-a1a6-5707ba8003d9")
+                            WarehouseID = new Guid("25f075a3-d55d-4a93-ad67-1ec095dc4597")
                         },
                         new
                         {
-                            ID_Product = new Guid("52c220ad-b160-47c8-99ce-c6bcf0d3d0a1"),
+                            ID_Product = new Guid("d9a5f831-e4fe-42c6-bbfa-d21fca5741dd"),
                             Auto = 0,
                             Cell = "a10",
                             Producer = "Fresh Farms",
                             ProductName = "Organic Apples",
                             QuantityInStock = 150,
-                            SupplierID = new Guid("150ff357-4e1b-4257-90f4-7da242f3ffaa"),
+                            SupplierID = new Guid("88cfa22b-02fa-468f-9aeb-7fa8f81e01dc"),
                             UnitPrice = 100.50m,
-                            WarehouseID = new Guid("5660eaea-4240-4362-9b13-403a765bbc54")
+                            WarehouseID = new Guid("c774729c-690c-4c53-8468-3c73e8ffb632")
                         },
                         new
                         {
-                            ID_Product = new Guid("6ce0a939-fe14-4d26-bebc-c77ad67ca5c5"),
+                            ID_Product = new Guid("c5d44187-c0f1-414e-95d1-a0d4ef427dcc"),
                             Auto = 0,
                             Cell = "a11",
                             Producer = "Bakery Co.",
                             ProductName = "Whole Wheat Bread",
                             QuantityInStock = 200,
-                            SupplierID = new Guid("150ff357-4e1b-4257-90f4-7da242f3ffaa"),
+                            SupplierID = new Guid("88cfa22b-02fa-468f-9aeb-7fa8f81e01dc"),
                             UnitPrice = 200.00m,
-                            WarehouseID = new Guid("5660eaea-4240-4362-9b13-403a765bbc54")
+                            WarehouseID = new Guid("c774729c-690c-4c53-8468-3c73e8ffb632")
                         },
                         new
                         {
-                            ID_Product = new Guid("0dc583e3-2692-4b21-87f6-eee8cab6e458"),
+                            ID_Product = new Guid("0e1efc12-6035-4d18-8ead-a1b9203dd841"),
                             Auto = 0,
                             Cell = "a12",
                             Producer = "Nutty Delights",
                             ProductName = "Almond Milk",
                             QuantityInStock = 100,
-                            SupplierID = new Guid("622eb028-4176-4e50-b7b1-fd061b1c12c0"),
+                            SupplierID = new Guid("939a8fb8-8dba-4a34-abea-2a9b85aa1655"),
                             UnitPrice = 300.50m,
-                            WarehouseID = new Guid("e60a4bcd-9372-4524-a3b8-7fe95158b845")
+                            WarehouseID = new Guid("f8f8d9e9-90e4-49ad-9336-2b2dc0fc35e3")
                         },
                         new
                         {
-                            ID_Product = new Guid("6082b477-c64c-4b5e-8b64-7e84c499ea98"),
+                            ID_Product = new Guid("aaaac5d2-8576-48e9-b348-2aedca1650f5"),
                             Auto = 0,
                             Cell = "a13",
                             Producer = "Dairy Best",
                             ProductName = "Greek Yogurt",
                             QuantityInStock = 80,
-                            SupplierID = new Guid("622eb028-4176-4e50-b7b1-fd061b1c12c0"),
+                            SupplierID = new Guid("939a8fb8-8dba-4a34-abea-2a9b85aa1655"),
                             UnitPrice = 4000.00m,
-                            WarehouseID = new Guid("c6aef0fe-4974-41ba-bfd7-7502ebb9967a")
+                            WarehouseID = new Guid("b0537ac5-d718-4d97-9638-d43f7d203885")
                         },
                         new
                         {
-                            ID_Product = new Guid("a31a169b-5c58-4d4d-afc9-1578ef17de0e"),
+                            ID_Product = new Guid("01e9c78b-d3ca-4133-a72c-55ba67085521"),
                             Auto = 0,
                             Cell = "a14",
                             Producer = "Farm Fresh",
                             ProductName = "Free-Range Eggs",
                             QuantityInStock = 60,
-                            SupplierID = new Guid("622eb028-4176-4e50-b7b1-fd061b1c12c0"),
+                            SupplierID = new Guid("939a8fb8-8dba-4a34-abea-2a9b85aa1655"),
                             UnitPrice = 2000.50m,
-                            WarehouseID = new Guid("c6aef0fe-4974-41ba-bfd7-7502ebb9967a")
+                            WarehouseID = new Guid("b0537ac5-d718-4d97-9638-d43f7d203885")
                         },
                         new
                         {
-                            ID_Product = new Guid("a4713f2f-2cdf-44e1-afc0-200ba0b9bfd1"),
+                            ID_Product = new Guid("729ec85d-fa0d-477b-8005-8899c4599a41"),
                             Auto = 0,
                             Cell = "a15",
                             Producer = "Grain Masters",
                             ProductName = "Brown Rice",
                             QuantityInStock = 120,
-                            SupplierID = new Guid("425882c1-de8b-4c50-a464-e667c9e8bf96"),
+                            SupplierID = new Guid("376d4527-7957-45c3-bc0e-fe2b2c11205a"),
                             UnitPrice = 1000.80m,
-                            WarehouseID = new Guid("548245ff-5cb1-48bc-a855-43c744f2fc35")
+                            WarehouseID = new Guid("3232ab97-72d0-4a78-9ba9-b9a69b1d7cde")
                         },
                         new
                         {
-                            ID_Product = new Guid("a70a1dd7-102d-4afb-adab-e0673aeddaaa"),
+                            ID_Product = new Guid("446eb2d5-9ab6-401a-bb5a-380465afca6d"),
                             Auto = 0,
                             Cell = "a106",
                             Producer = "Healthy Grains",
                             ProductName = "Quinoa",
                             QuantityInStock = 90,
-                            SupplierID = new Guid("425882c1-de8b-4c50-a464-e667c9e8bf96"),
+                            SupplierID = new Guid("376d4527-7957-45c3-bc0e-fe2b2c11205a"),
                             UnitPrice = 4000.50m,
-                            WarehouseID = new Guid("548245ff-5cb1-48bc-a855-43c744f2fc35")
+                            WarehouseID = new Guid("3232ab97-72d0-4a78-9ba9-b9a69b1d7cde")
                         },
                         new
                         {
-                            ID_Product = new Guid("1d126102-f297-4f5e-a387-432d117a178f"),
+                            ID_Product = new Guid("3f4810d0-2338-460d-9f80-f3c39699af53"),
                             Auto = 0,
                             Cell = "a107",
                             Producer = "Tropical Goods",
                             ProductName = "Coconut Oil",
                             QuantityInStock = 70,
-                            SupplierID = new Guid("425882c1-de8b-4c50-a464-e667c9e8bf96"),
+                            SupplierID = new Guid("376d4527-7957-45c3-bc0e-fe2b2c11205a"),
                             UnitPrice = 6000.00m,
-                            WarehouseID = new Guid("e60a4bcd-9372-4524-a3b8-7fe95158b845")
+                            WarehouseID = new Guid("f8f8d9e9-90e4-49ad-9336-2b2dc0fc35e3")
                         },
                         new
                         {
-                            ID_Product = new Guid("646fbdce-e801-4f2f-91c7-c196362f6b7b"),
+                            ID_Product = new Guid("9f1c1f9b-87f2-4f6e-a0af-b3228c7c4d15"),
                             Auto = 0,
                             Cell = "a108",
                             Producer = "Choco Bliss",
                             ProductName = "Dark Chocolate",
                             QuantityInStock = 50,
-                            SupplierID = new Guid("9939120d-d873-44d0-9f94-149f43b78739"),
+                            SupplierID = new Guid("85e16251-16ae-411a-9314-2f917a2b65e2"),
                             UnitPrice = 3000.00m,
-                            WarehouseID = new Guid("29733313-63c1-4b11-bcbe-43ab106b1259")
+                            WarehouseID = new Guid("d014bdd3-018a-4b71-a1c1-7fb2594643de")
                         },
                         new
                         {
-                            ID_Product = new Guid("73d7c52f-176b-49ed-89ff-ad6f07521687"),
+                            ID_Product = new Guid("f924bda0-f643-4b8f-88e8-5272e4f044de"),
                             Auto = 0,
                             Cell = "a109",
                             Producer = "Green Leaf",
                             ProductName = "Spinach",
                             QuantityInStock = 110,
-                            SupplierID = new Guid("00f472e3-e729-4c4b-afb4-47b7b4bf942d"),
+                            SupplierID = new Guid("124127e1-9781-4556-8e33-3283fc113f91"),
                             UnitPrice = 2000.20m,
-                            WarehouseID = new Guid("58e3105d-db58-4960-ab72-de93a731a60a")
+                            WarehouseID = new Guid("cc50f20e-acbd-4667-bac5-71da8e43938e")
                         },
                         new
                         {
-                            ID_Product = new Guid("f69e4b89-6144-4c54-880d-9ea214d764b1"),
+                            ID_Product = new Guid("189d7451-0786-461c-8fba-7705e8e33ac6"),
                             Auto = 0,
                             Cell = "a110",
                             Producer = "Healthy Mornings",
                             ProductName = "Oatmeal",
                             QuantityInStock = 200,
-                            SupplierID = new Guid("583539ac-99ff-4810-b062-4ab12b4eee2e"),
+                            SupplierID = new Guid("7c0c3b60-8a06-4572-8b1a-ae5efb34f507"),
                             UnitPrice = 3000.00m,
-                            WarehouseID = new Guid("f458867f-fb75-423a-910c-893bb4d79c9f")
+                            WarehouseID = new Guid("c447c363-4528-437c-ae09-41d9304e6594")
                         },
                         new
                         {
-                            ID_Product = new Guid("4270c1f7-6610-4e54-8e79-5016ac00e18a"),
+                            ID_Product = new Guid("5aad2270-ff2f-43e3-b655-2b819d1b3471"),
                             Auto = 0,
                             Cell = "a111",
                             Producer = "Superfoods Co.",
                             ProductName = "Chia Seeds",
                             QuantityInStock = 150,
-                            SupplierID = new Guid("306a79d3-dd09-463b-aed3-999231eeb121"),
+                            SupplierID = new Guid("d8920fb8-b027-46e1-be6d-66e3808c8f9b"),
                             UnitPrice = 500.00m,
-                            WarehouseID = new Guid("fedf9557-059f-4eea-b5b0-29203109e14b")
+                            WarehouseID = new Guid("9109fa2b-a485-4f3c-b657-5271a8bea7de")
                         },
                         new
                         {
-                            ID_Product = new Guid("d4ef38f1-cbf4-47ee-a7ae-72ca3d030159"),
+                            ID_Product = new Guid("83572000-5201-4653-bc78-7a4b483a50f4"),
                             Auto = 0,
                             Cell = "a112",
                             Producer = "Nature's Best",
                             ProductName = "Avocado Oil",
                             QuantityInStock = 80,
-                            SupplierID = new Guid("5f5805c9-30be-4768-bf5c-9e1e7df831aa"),
+                            SupplierID = new Guid("1cdbe5db-4292-4fb5-9601-1773ac101eea"),
                             UnitPrice = 800.00m,
-                            WarehouseID = new Guid("c6aef0fe-4974-41ba-bfd7-7502ebb9967a")
+                            WarehouseID = new Guid("b0537ac5-d718-4d97-9638-d43f7d203885")
                         },
                         new
                         {
-                            ID_Product = new Guid("45f64507-75a8-41d9-b178-f6c0be3ae039"),
+                            ID_Product = new Guid("12383e39-59ec-4c76-b5df-d74e455b379a"),
                             Auto = 0,
                             Cell = "a113",
                             Producer = "Legume Lovers",
                             ProductName = "Canned Chickpeas",
                             QuantityInStock = 300,
-                            SupplierID = new Guid("681cf02d-f394-45dc-8a0f-5dfb24c16d01"),
+                            SupplierID = new Guid("a0506634-cc3e-414e-860c-f9ae15d1daf8"),
                             UnitPrice = 1000.20m,
-                            WarehouseID = new Guid("548245ff-5cb1-48bc-a855-43c744f2fc35")
+                            WarehouseID = new Guid("3232ab97-72d0-4a78-9ba9-b9a69b1d7cde")
                         },
                         new
                         {
-                            ID_Product = new Guid("02c58195-8d04-4106-987b-6205e2bd582d"),
+                            ID_Product = new Guid("bbf39327-3ebe-4ca3-9789-d334c45c4654"),
                             Auto = 0,
                             Cell = "a114",
                             Producer = "Berry Good",
                             ProductName = "Frozen Berries",
                             QuantityInStock = 120,
-                            SupplierID = new Guid("822c14bf-bb0f-468f-bd5f-77e16183700f"),
+                            SupplierID = new Guid("22c39cb1-24bb-43c2-b60e-aa655031e4f6"),
                             UnitPrice = 400.00m,
-                            WarehouseID = new Guid("e60a4bcd-9372-4524-a3b8-7fe95158b845")
+                            WarehouseID = new Guid("f8f8d9e9-90e4-49ad-9336-2b2dc0fc35e3")
                         },
                         new
                         {
-                            ID_Product = new Guid("22712885-e0cd-40b6-ac06-db6cf07f7e59"),
+                            ID_Product = new Guid("8b300791-586f-4061-bef6-6d6b88e12240"),
                             Auto = 0,
                             Cell = "a115",
                             Producer = "Nutty Spread",
                             ProductName = "Peanut Butter",
                             QuantityInStock = 90,
-                            SupplierID = new Guid("8a7047d7-4c81-4aed-8bdb-d114e3eee048"),
+                            SupplierID = new Guid("f1404bea-0c13-4c3c-8608-72a4cf1142ea"),
                             UnitPrice = 3000.50m,
-                            WarehouseID = new Guid("0d21dfff-cea4-4304-9306-0e4beb5950b1")
+                            WarehouseID = new Guid("3312aa85-d4a2-46d0-b8fc-3a504a2108e4")
                         },
                         new
                         {
-                            ID_Product = new Guid("9b4ddf17-05e4-4d09-9ffa-1a1783deff38"),
+                            ID_Product = new Guid("4485e0fa-8f90-4348-8676-2769eb6ba5e8"),
                             Auto = 0,
                             Cell = "a116",
                             Producer = "Tropical Refreshments",
                             ProductName = "Coconut Water",
                             QuantityInStock = 200,
-                            SupplierID = new Guid("468b2e06-394b-44e3-914f-be7924c10f8d"),
+                            SupplierID = new Guid("6c074e28-87e7-4ad2-8562-8c4b3d4862c2"),
                             UnitPrice = 200.50m,
-                            WarehouseID = new Guid("74795400-2abb-40bf-9a3c-88d7bcccd648")
+                            WarehouseID = new Guid("f0d04b50-203a-436f-abb2-0225b006ad16")
                         },
                         new
                         {
-                            ID_Product = new Guid("c449035c-eb8c-4c9c-9777-6d709d5514c9"),
+                            ID_Product = new Guid("d2b8687a-070a-4817-96e3-365bebb693c4"),
                             Auto = 0,
                             Cell = "a117",
                             Producer = "Snack Time",
                             ProductName = "Granola Bars",
                             QuantityInStock = 150,
-                            SupplierID = new Guid("cf34d94c-7388-4324-ab89-1a6144eba52c"),
+                            SupplierID = new Guid("f5240207-4281-4dbf-8d12-ce189e3fe3e6"),
                             UnitPrice = 100.80m,
-                            WarehouseID = new Guid("29733313-63c1-4b11-bcbe-43ab106b1259")
+                            WarehouseID = new Guid("d014bdd3-018a-4b71-a1c1-7fb2594643de")
                         },
                         new
                         {
-                            ID_Product = new Guid("ddaafc36-f7c7-438f-bedc-e754b148da68"),
+                            ID_Product = new Guid("c2685135-2196-483b-b6f9-c397b56b4870"),
                             Auto = 0,
                             Cell = "a118",
                             Producer = "Dips & Spreads",
                             ProductName = "Hummus",
                             QuantityInStock = 100,
-                            SupplierID = new Guid("819c4baa-aacd-4b59-94f0-698f5ba47072"),
+                            SupplierID = new Guid("04d1efb8-0849-4f39-9d22-c618d529756c"),
                             UnitPrice = 200.00m,
-                            WarehouseID = new Guid("58e3105d-db58-4960-ab72-de93a731a60a")
+                            WarehouseID = new Guid("cc50f20e-acbd-4667-bac5-71da8e43938e")
                         },
                         new
                         {
-                            ID_Product = new Guid("b7a50599-43ee-4205-975f-cd8d282dc3ec"),
+                            ID_Product = new Guid("cd435b50-146c-4b35-8aaa-df60255589b8"),
                             Auto = 0,
                             Cell = "a119",
                             Producer = "Sweet Harvest",
                             ProductName = "Maple Syrup",
                             QuantityInStock = 70,
-                            SupplierID = new Guid("26672d2c-5bfa-40cd-9a24-b15d3be0c2be"),
+                            SupplierID = new Guid("ef76beb7-0876-49ef-9dd1-eb309bd07269"),
                             UnitPrice = 6000.00m,
-                            WarehouseID = new Guid("b879b027-9089-4574-a773-7bcd5b150b3f")
+                            WarehouseID = new Guid("12158fdf-5485-4df7-9842-3b49d240bdec")
                         },
                         new
                         {
-                            ID_Product = new Guid("3000aba2-70eb-4b0f-8801-fcbb05379828"),
+                            ID_Product = new Guid("cb3845d9-64d2-4c9e-afc6-4a0aac33fdbd"),
                             Auto = 0,
                             Cell = "a126",
                             Producer = "Root Veggies",
                             ProductName = "Sweet Potatoes",
                             QuantityInStock = 120,
-                            SupplierID = new Guid("49283e03-ec1f-4eb1-977c-a96fe799c63d"),
+                            SupplierID = new Guid("eb180958-e017-4e60-8e78-df8f361c9bf6"),
                             UnitPrice = 100.80m,
-                            WarehouseID = new Guid("f458867f-fb75-423a-910c-893bb4d79c9f")
+                            WarehouseID = new Guid("c447c363-4528-437c-ae09-41d9304e6594")
                         },
                         new
                         {
-                            ID_Product = new Guid("925c7bbb-bb82-4754-befd-2f4c176b34d7"),
+                            ID_Product = new Guid("a980e830-1ec8-4cb3-b07d-fce0badc7cbf"),
                             Auto = 0,
                             Cell = "a127",
                             Producer = "Garden Fresh",
                             ProductName = "Canned Tomatoes",
                             QuantityInStock = 300,
-                            SupplierID = new Guid("b4e43cb3-97e2-4e95-9945-7fe0efb90dfc"),
+                            SupplierID = new Guid("9ecd1896-b951-40f8-b13d-91a4b1bf09f3"),
                             UnitPrice = 1000.00m,
-                            WarehouseID = new Guid("f6df8f8f-9eb0-4332-a1a6-5707ba8003d9")
+                            WarehouseID = new Guid("25f075a3-d55d-4a93-ad67-1ec095dc4597")
                         },
                         new
                         {
-                            ID_Product = new Guid("ddd739d0-d947-4dd6-bca6-74434ddd059f"),
+                            ID_Product = new Guid("015cd4a6-7581-40ff-9d9f-bf2abe283b02"),
                             Auto = 0,
                             Cell = "a128",
                             Producer = "Healthy Snacks",
                             ProductName = "Nut Mix",
                             QuantityInStock = 90,
-                            SupplierID = new Guid("2b7e4611-7977-409c-9872-73aad4cbddab"),
+                            SupplierID = new Guid("13af075e-a923-42fc-a866-6b0cfe6b79d6"),
                             UnitPrice = 600.00m,
-                            WarehouseID = new Guid("0bb9f8e0-0500-40e8-88f8-62b1d6b4b451")
+                            WarehouseID = new Guid("ac73118a-f69f-423a-aa64-f4b01dfdcafc")
                         },
                         new
                         {
-                            ID_Product = new Guid("7b81bb69-5c13-41af-9cda-5223d1e28944"),
+                            ID_Product = new Guid("ac9e84c9-b819-4a75-a0f0-978874753705"),
                             Auto = 0,
                             Cell = "a129",
                             Producer = "Gourmet Essentials",
                             ProductName = "Balsamic Vinegar",
                             QuantityInStock = 70,
-                            SupplierID = new Guid("5636731c-722c-4c85-9d6f-452f4904a50d"),
+                            SupplierID = new Guid("9c6a8113-ba44-4b94-bebf-31aacb96a183"),
                             UnitPrice = 4000.50m,
-                            WarehouseID = new Guid("18424185-38c4-494d-99a1-9243c270528c")
+                            WarehouseID = new Guid("e4a36000-c5c6-4836-999b-57b3a5f5ce6c")
                         },
                         new
                         {
-                            ID_Product = new Guid("96b1a41c-8b34-495b-b76f-58451a206e4c"),
+                            ID_Product = new Guid("f5f33578-1f17-48ee-b04a-3d2e3b74edeb"),
                             Auto = 0,
                             Cell = "a130",
                             Producer = "Plant Protein Co.",
                             ProductName = "Tofu",
                             QuantityInStock = 100,
-                            SupplierID = new Guid("26672d2c-5bfa-40cd-9a24-b15d3be0c2be"),
+                            SupplierID = new Guid("ef76beb7-0876-49ef-9dd1-eb309bd07269"),
                             UnitPrice = 200.50m,
-                            WarehouseID = new Guid("f458867f-fb75-423a-910c-893bb4d79c9f")
+                            WarehouseID = new Guid("c447c363-4528-437c-ae09-41d9304e6594")
                         },
                         new
                         {
-                            ID_Product = new Guid("92fe2ca3-6717-4194-abbb-f16ef82ce71f"),
+                            ID_Product = new Guid("0f329756-e609-4306-96a9-89d9efcd7d5a"),
                             Auto = 0,
                             Cell = "a131",
                             Producer = "Nutty Delights",
                             ProductName = "Almonds",
                             QuantityInStock = 80,
-                            SupplierID = new Guid("819c4baa-aacd-4b59-94f0-698f5ba47072"),
+                            SupplierID = new Guid("04d1efb8-0849-4f39-9d22-c618d529756c"),
                             UnitPrice = 8000.00m,
-                            WarehouseID = new Guid("f6df8f8f-9eb0-4332-a1a6-5707ba8003d9")
+                            WarehouseID = new Guid("25f075a3-d55d-4a93-ad67-1ec095dc4597")
                         },
                         new
                         {
-                            ID_Product = new Guid("67e05ad3-708d-4a0f-8ceb-0de7f1521dc8"),
+                            ID_Product = new Guid("a3a73285-10bc-400f-bab8-8d740c128192"),
                             Auto = 0,
                             Cell = "a132",
                             Producer = "Spice World",
                             ProductName = "Cinnamon",
                             QuantityInStock = 150,
-                            SupplierID = new Guid("cf34d94c-7388-4324-ab89-1a6144eba52c"),
+                            SupplierID = new Guid("f5240207-4281-4dbf-8d12-ce189e3fe3e6"),
                             UnitPrice = 300.00m,
-                            WarehouseID = new Guid("18424185-38c4-494d-99a1-9243c270528c")
+                            WarehouseID = new Guid("e4a36000-c5c6-4836-999b-57b3a5f5ce6c")
                         },
                         new
                         {
-                            ID_Product = new Guid("aee79716-865e-4c46-a528-839efb7c2b7f"),
+                            ID_Product = new Guid("ce30b8bc-c5f1-4431-a3eb-bcb5a22afbe3"),
                             Auto = 0,
                             Cell = "a133",
                             Producer = "Legume Lovers",
                             ProductName = "Black Beans",
                             QuantityInStock = 200,
-                            SupplierID = new Guid("f558f1db-72a1-4347-8472-7715f43772d6"),
+                            SupplierID = new Guid("aae5c6fe-5eca-41d0-8984-205f938534e7"),
                             UnitPrice = 100.50m,
-                            WarehouseID = new Guid("0bb9f8e0-0500-40e8-88f8-62b1d6b4b451")
+                            WarehouseID = new Guid("ac73118a-f69f-423a-aa64-f4b01dfdcafc")
                         },
                         new
                         {
-                            ID_Product = new Guid("fb24b90f-a154-4790-9879-2cd0a2b7b01e"),
+                            ID_Product = new Guid("564ab390-fb6f-490e-9af3-4941f8907f41"),
                             Auto = 0,
                             Cell = "a134",
                             Producer = "Fresh Greens",
                             ProductName = "Cabbage",
                             QuantityInStock = 120,
-                            SupplierID = new Guid("d7b77dc7-16d0-430b-9427-8bc2714c30e0"),
+                            SupplierID = new Guid("8c18cad4-c33a-4f24-8f20-e76da325fa37"),
                             UnitPrice = 166.80m,
-                            WarehouseID = new Guid("f458867f-fb75-423a-910c-893bb4d79c9f")
+                            WarehouseID = new Guid("c447c363-4528-437c-ae09-41d9304e6594")
                         },
                         new
                         {
-                            ID_Product = new Guid("878f48a7-db76-449f-a750-8bf7c41da1d3"),
+                            ID_Product = new Guid("75b0e70c-1bf4-4f48-bb4c-ddc62f3a35f5"),
                             Auto = 0,
                             Cell = "a135",
                             Producer = "Healthy Harvest",
                             ProductName = "Lentils",
                             QuantityInStock = 180,
-                            SupplierID = new Guid("150ff357-4e1b-4257-90f4-7da242f3ffaa"),
+                            SupplierID = new Guid("88cfa22b-02fa-468f-9aeb-7fa8f81e01dc"),
                             UnitPrice = 177.20m,
-                            WarehouseID = new Guid("f6df8f8f-9eb0-4332-a1a6-5707ba8003d9")
+                            WarehouseID = new Guid("25f075a3-d55d-4a93-ad67-1ec095dc4597")
                         },
                         new
                         {
-                            ID_Product = new Guid("2a81ea83-c027-48e6-ad93-b1314f804ff1"),
+                            ID_Product = new Guid("6a7dba93-3d3e-4126-88f7-843d0d8944f1"),
                             Auto = 0,
                             Cell = "a136",
                             Producer = "Snack Time",
                             ProductName = "Pumpkin Seeds",
                             QuantityInStock = 90,
-                            SupplierID = new Guid("622eb028-4176-4e50-b7b1-fd061b1c12c0"),
+                            SupplierID = new Guid("939a8fb8-8dba-4a34-abea-2a9b85aa1655"),
                             UnitPrice = 4777.00m,
-                            WarehouseID = new Guid("18424185-38c4-494d-99a1-9243c270528c")
+                            WarehouseID = new Guid("e4a36000-c5c6-4836-999b-57b3a5f5ce6c")
                         },
                         new
                         {
-                            ID_Product = new Guid("0c37c3dc-0322-419e-b7b7-eb7216f01af2"),
+                            ID_Product = new Guid("faec27f8-469a-4574-8b76-e78c1aed9da8"),
                             Auto = 0,
                             Cell = "a137",
                             Producer = "Garden Fresh",
                             ProductName = "Zucchini",
                             QuantityInStock = 150,
-                            SupplierID = new Guid("2b7e4611-7977-409c-9872-73aad4cbddab"),
+                            SupplierID = new Guid("13af075e-a923-42fc-a866-6b0cfe6b79d6"),
                             UnitPrice = 1777.00m,
-                            WarehouseID = new Guid("0bb9f8e0-0500-40e8-88f8-62b1d6b4b451")
+                            WarehouseID = new Guid("ac73118a-f69f-423a-aa64-f4b01dfdcafc")
                         },
                         new
                         {
-                            ID_Product = new Guid("d725d188-f960-41c9-a3cc-000b81f48e5e"),
+                            ID_Product = new Guid("74fe2d32-4c00-40c8-b9ce-9a7a06cd3c6e"),
                             Auto = 0,
                             Cell = "a138",
                             Producer = "Tropical Goods",
                             ProductName = "Coconut Milk",
                             QuantityInStock = 110,
-                            SupplierID = new Guid("49283e03-ec1f-4eb1-977c-a96fe799c63d"),
+                            SupplierID = new Guid("eb180958-e017-4e60-8e78-df8f361c9bf6"),
                             UnitPrice = 2777.50m,
-                            WarehouseID = new Guid("f458867f-fb75-423a-910c-893bb4d79c9f")
+                            WarehouseID = new Guid("c447c363-4528-437c-ae09-41d9304e6594")
                         },
                         new
                         {
-                            ID_Product = new Guid("3cfa5bb1-5871-47eb-924d-da44f31eb32c"),
+                            ID_Product = new Guid("9030ecc4-5e68-4ff7-b3b6-da50bd741ea5"),
                             Auto = 0,
                             Cell = "a139",
                             Producer = "Asian Cuisine",
                             ProductName = "Rice Noodles",
                             QuantityInStock = 130,
-                            SupplierID = new Guid("b4e43cb3-97e2-4e95-9945-7fe0efb90dfc"),
+                            SupplierID = new Guid("9ecd1896-b951-40f8-b13d-91a4b1bf09f3"),
                             UnitPrice = 3777.50m,
-                            WarehouseID = new Guid("f6df8f8f-9eb0-4332-a1a6-5707ba8003d9")
+                            WarehouseID = new Guid("25f075a3-d55d-4a93-ad67-1ec095dc4597")
                         });
                 });
 
@@ -1325,7 +1328,7 @@ namespace API.Migrations
                     b.HasData(
                         new
                         {
-                            ID_Supplier = new Guid("5636731c-722c-4c85-9d6f-452f4904a50d"),
+                            ID_Supplier = new Guid("9c6a8113-ba44-4b94-bebf-31aacb96a183"),
                             Auto = 0,
                             ContactName = "Alice",
                             Email = "alice@supplier.com",
@@ -1334,7 +1337,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("2b7e4611-7977-409c-9872-73aad4cbddab"),
+                            ID_Supplier = new Guid("13af075e-a923-42fc-a866-6b0cfe6b79d6"),
                             Auto = 0,
                             ContactName = "Bob",
                             Email = "bob@supplier.com",
@@ -1343,7 +1346,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("49283e03-ec1f-4eb1-977c-a96fe799c63d"),
+                            ID_Supplier = new Guid("eb180958-e017-4e60-8e78-df8f361c9bf6"),
                             Auto = 0,
                             ContactName = "Charlie",
                             Email = "charlie@supplier.com",
@@ -1352,7 +1355,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("b4e43cb3-97e2-4e95-9945-7fe0efb90dfc"),
+                            ID_Supplier = new Guid("9ecd1896-b951-40f8-b13d-91a4b1bf09f3"),
                             Auto = 0,
                             ContactName = "Diana",
                             Email = "diana@supplier.com",
@@ -1361,7 +1364,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("583539ac-99ff-4810-b062-4ab12b4eee2e"),
+                            ID_Supplier = new Guid("7c0c3b60-8a06-4572-8b1a-ae5efb34f507"),
                             Auto = 0,
                             ContactName = "John Doe",
                             Email = "john.doe@acmecorp.com",
@@ -1370,7 +1373,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("306a79d3-dd09-463b-aed3-999231eeb121"),
+                            ID_Supplier = new Guid("d8920fb8-b027-46e1-be6d-66e3808c8f9b"),
                             Auto = 0,
                             ContactName = "Jane Smith",
                             Email = "jane.smith@globalsupplies.com",
@@ -1379,7 +1382,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("5f5805c9-30be-4768-bf5c-9e1e7df831aa"),
+                            ID_Supplier = new Guid("1cdbe5db-4292-4fb5-9601-1773ac101eea"),
                             Auto = 0,
                             ContactName = "Alice Johnson",
                             Email = "alice.johnson@techinnovations.com",
@@ -1388,7 +1391,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("8a7047d7-4c81-4aed-8bdb-d114e3eee048"),
+                            ID_Supplier = new Guid("f1404bea-0c13-4c3c-8608-72a4cf1142ea"),
                             Auto = 0,
                             ContactName = "Bob Brown",
                             Email = "bob.brown@qualitygoods.com",
@@ -1397,7 +1400,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("822c14bf-bb0f-468f-bd5f-77e16183700f"),
+                            ID_Supplier = new Guid("22c39cb1-24bb-43c2-b60e-aa655031e4f6"),
                             Auto = 0,
                             ContactName = "Charlie Davis",
                             Email = "charlie.davis@fastdelivery.com",
@@ -1406,7 +1409,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("681cf02d-f394-45dc-8a0f-5dfb24c16d01"),
+                            ID_Supplier = new Guid("a0506634-cc3e-414e-860c-f9ae15d1daf8"),
                             Auto = 0,
                             ContactName = "Diana Green",
                             Email = "diana.green@ecoproducts.com",
@@ -1415,7 +1418,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("468b2e06-394b-44e3-914f-be7924c10f8d"),
+                            ID_Supplier = new Guid("6c074e28-87e7-4ad2-8562-8c4b3d4862c2"),
                             Auto = 0,
                             ContactName = "Ethan White",
                             Email = "ethan.white@homeessentials.com",
@@ -1424,7 +1427,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("26672d2c-5bfa-40cd-9a24-b15d3be0c2be"),
+                            ID_Supplier = new Guid("ef76beb7-0876-49ef-9dd1-eb309bd07269"),
                             Auto = 0,
                             ContactName = "Fiona Black",
                             Email = "fiona.black@officesuppliesco.com",
@@ -1433,7 +1436,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("819c4baa-aacd-4b59-94f0-698f5ba47072"),
+                            ID_Supplier = new Guid("04d1efb8-0849-4f39-9d22-c618d529756c"),
                             Auto = 0,
                             ContactName = "George Blue",
                             Email = "george.blue@gourmetfoods.com",
@@ -1442,7 +1445,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("cf34d94c-7388-4324-ab89-1a6144eba52c"),
+                            ID_Supplier = new Guid("f5240207-4281-4dbf-8d12-ce189e3fe3e6"),
                             Auto = 0,
                             ContactName = "Hannah Red",
                             Email = "hannah.red@fashionhub.com",
@@ -1451,7 +1454,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("f558f1db-72a1-4347-8472-7715f43772d6"),
+                            ID_Supplier = new Guid("aae5c6fe-5eca-41d0-8984-205f938534e7"),
                             Auto = 0,
                             ContactName = "Ian Gray",
                             Email = "ian.gray@healthwellness.com",
@@ -1460,7 +1463,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("d7b77dc7-16d0-430b-9427-8bc2714c30e0"),
+                            ID_Supplier = new Guid("8c18cad4-c33a-4f24-8f20-e76da325fa37"),
                             Auto = 0,
                             ContactName = "Julia Orange",
                             Email = "julia.orange@sportsgear.com",
@@ -1469,7 +1472,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("150ff357-4e1b-4257-90f4-7da242f3ffaa"),
+                            ID_Supplier = new Guid("88cfa22b-02fa-468f-9aeb-7fa8f81e01dc"),
                             Auto = 0,
                             ContactName = "Kevin Purple",
                             Email = "kevin.purple@petsupplies.com",
@@ -1478,7 +1481,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("622eb028-4176-4e50-b7b1-fd061b1c12c0"),
+                            ID_Supplier = new Guid("939a8fb8-8dba-4a34-abea-2a9b85aa1655"),
                             Auto = 0,
                             ContactName = "Laura Pink",
                             Email = "laura.pink@automotiveparts.com",
@@ -1487,7 +1490,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("425882c1-de8b-4c50-a464-e667c9e8bf96"),
+                            ID_Supplier = new Guid("376d4527-7957-45c3-bc0e-fe2b2c11205a"),
                             Auto = 0,
                             ContactName = "Mike Yellow",
                             Email = "mike.yellow@constructionmaterials.com",
@@ -1496,7 +1499,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("9939120d-d873-44d0-9f94-149f43b78739"),
+                            ID_Supplier = new Guid("85e16251-16ae-411a-9314-2f917a2b65e2"),
                             Auto = 0,
                             ContactName = "Nina Cyan",
                             Email = "nina.cyan@beveragedistributors.com",
@@ -1505,7 +1508,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("00f472e3-e729-4c4b-afb4-47b7b4bf942d"),
+                            ID_Supplier = new Guid("124127e1-9781-4556-8e33-3283fc113f91"),
                             Auto = 0,
                             ContactName = "Oscar Magenta",
                             Email = "oscar.magenta@cleaningsupplies.com",
@@ -1514,7 +1517,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("85f3c6bc-a4a8-4b59-9ce2-2f960c2f4de3"),
+                            ID_Supplier = new Guid("906e55ef-0090-41e9-a703-4d8f2509d552"),
                             Auto = 0,
                             ContactName = "Paula Teal",
                             Email = "paula.teal@furnitureworld.com",
@@ -1523,7 +1526,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("ffab429b-b9e1-4020-bcbb-093d6b684142"),
+                            ID_Supplier = new Guid("a251085b-5a70-4764-94f5-981e42951d84"),
                             Auto = 0,
                             ContactName = "Quinn Brown",
                             Email = "quinn.brown@gardensupplies.com",
@@ -1532,7 +1535,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Supplier = new Guid("de5ca043-7fe1-4ff2-963e-10035018d805"),
+                            ID_Supplier = new Guid("8ee2e9b2-b343-4a62-b141-5da65066b1f0"),
                             Auto = 0,
                             ContactName = "Rachel Silver",
                             Email = "rachel.silver@digitalsolutions.com",
@@ -1578,7 +1581,7 @@ namespace API.Migrations
                     b.HasData(
                         new
                         {
-                            ID_Warehouse = new Guid("18424185-38c4-494d-99a1-9243c270528c"),
+                            ID_Warehouse = new Guid("e4a36000-c5c6-4836-999b-57b3a5f5ce6c"),
                             Auto = 0,
                             Capacity = 50000,
                             Location = "Downtown",
@@ -1587,7 +1590,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Warehouse = new Guid("0bb9f8e0-0500-40e8-88f8-62b1d6b4b451"),
+                            ID_Warehouse = new Guid("ac73118a-f69f-423a-aa64-f4b01dfdcafc"),
                             Auto = 0,
                             Capacity = 30000,
                             Location = "North District",
@@ -1596,7 +1599,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Warehouse = new Guid("f458867f-fb75-423a-910c-893bb4d79c9f"),
+                            ID_Warehouse = new Guid("c447c363-4528-437c-ae09-41d9304e6594"),
                             Auto = 0,
                             Capacity = 40000,
                             Location = "East District",
@@ -1605,7 +1608,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Warehouse = new Guid("f6df8f8f-9eb0-4332-a1a6-5707ba8003d9"),
+                            ID_Warehouse = new Guid("25f075a3-d55d-4a93-ad67-1ec095dc4597"),
                             Auto = 0,
                             Capacity = 35000,
                             Location = "West District",
@@ -1614,7 +1617,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Warehouse = new Guid("fedf9557-059f-4eea-b5b0-29203109e14b"),
+                            ID_Warehouse = new Guid("9109fa2b-a485-4f3c-b657-5271a8bea7de"),
                             Auto = 0,
                             Capacity = 4500,
                             Location = "South District",
@@ -1623,7 +1626,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Warehouse = new Guid("b879b027-9089-4574-a773-7bcd5b150b3f"),
+                            ID_Warehouse = new Guid("12158fdf-5485-4df7-9842-3b49d240bdec"),
                             Auto = 0,
                             Capacity = 6000,
                             Location = "Industrial Park",
@@ -1632,7 +1635,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Warehouse = new Guid("58e3105d-db58-4960-ab72-de93a731a60a"),
+                            ID_Warehouse = new Guid("cc50f20e-acbd-4667-bac5-71da8e43938e"),
                             Auto = 0,
                             Capacity = 7000,
                             Location = "Airport Road",
@@ -1641,7 +1644,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Warehouse = new Guid("29733313-63c1-4b11-bcbe-43ab106b1259"),
+                            ID_Warehouse = new Guid("d014bdd3-018a-4b71-a1c1-7fb2594643de"),
                             Auto = 0,
                             Capacity = 2500,
                             Location = "Suburban Area",
@@ -1650,7 +1653,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Warehouse = new Guid("74795400-2abb-40bf-9a3c-88d7bcccd648"),
+                            ID_Warehouse = new Guid("f0d04b50-203a-436f-abb2-0225b006ad16"),
                             Auto = 0,
                             Capacity = 2000,
                             Location = "Market Street",
@@ -1659,7 +1662,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Warehouse = new Guid("0d21dfff-cea4-4304-9306-0e4beb5950b1"),
+                            ID_Warehouse = new Guid("3312aa85-d4a2-46d0-b8fc-3a504a2108e4"),
                             Auto = 0,
                             Capacity = 8000,
                             Location = "Port Area",
@@ -1668,7 +1671,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Warehouse = new Guid("5660eaea-4240-4362-9b13-403a765bbc54"),
+                            ID_Warehouse = new Guid("c774729c-690c-4c53-8468-3c73e8ffb632"),
                             Auto = 0,
                             Capacity = 1000,
                             Location = "Location A",
@@ -1677,7 +1680,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Warehouse = new Guid("e60a4bcd-9372-4524-a3b8-7fe95158b845"),
+                            ID_Warehouse = new Guid("f8f8d9e9-90e4-49ad-9336-2b2dc0fc35e3"),
                             Auto = 0,
                             Capacity = 2000,
                             Location = "Location B",
@@ -1686,7 +1689,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Warehouse = new Guid("c6aef0fe-4974-41ba-bfd7-7502ebb9967a"),
+                            ID_Warehouse = new Guid("b0537ac5-d718-4d97-9638-d43f7d203885"),
                             Auto = 0,
                             Capacity = 1500,
                             Location = "Location C",
@@ -1695,7 +1698,7 @@ namespace API.Migrations
                         },
                         new
                         {
-                            ID_Warehouse = new Guid("548245ff-5cb1-48bc-a855-43c744f2fc35"),
+                            ID_Warehouse = new Guid("3232ab97-72d0-4a78-9ba9-b9a69b1d7cde"),
                             Auto = 0,
                             Capacity = 2500,
                             Location = "Location D",
@@ -1709,7 +1712,7 @@ namespace API.Migrations
                     b.HasOne("DBase.Models.Customer", "Customer")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerID")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Customer");

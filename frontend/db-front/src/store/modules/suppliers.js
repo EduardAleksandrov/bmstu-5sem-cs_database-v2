@@ -94,7 +94,7 @@ export default {
     },
     state: {
         suppliersList: [],
-        itemsPerPage: 2,
+        itemsPerPage: 10,
         page: 1,
         modal: false, //показывать модалку
         currentElementForModal:{},

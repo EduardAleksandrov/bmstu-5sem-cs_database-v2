@@ -73,7 +73,7 @@ export default {
     },
     state: {
         OrderlistList: [],
-        itemsPerPage: 5,
+        itemsPerPage: 10,
         page: 1,
         modal: false, //показывать модалку
         orderDetailsModal: false,

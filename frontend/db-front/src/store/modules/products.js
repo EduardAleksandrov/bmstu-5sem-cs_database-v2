@@ -121,7 +121,7 @@ export default {
     },
     state: {
         productsList: [],
-        itemsPerPage: 2,
+        itemsPerPage: 10,
         page: 1,
         modal: false, //показывать модалку
         currentElementForModal:{},
